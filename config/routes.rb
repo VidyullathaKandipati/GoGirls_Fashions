@@ -1,6 +1,7 @@
 # == Route Map
 #
 #                 Prefix Verb   URI Pattern                                         Controller#Action
+#                   root GET    /                                                   pages#home
 #                  users GET    /users(.:format)                                    users#index
 #                        POST   /users(.:format)                                    users#create
 #               new_user GET    /users/new(.:format)                                users#new
@@ -9,14 +10,6 @@
 #                        PATCH  /users/:id(.:format)                                users#update
 #                        PUT    /users/:id(.:format)                                users#update
 #                        DELETE /users/:id(.:format)                                users#destroy
-#             categories GET    /categories(.:format)                               categories#index
-#                        POST   /categories(.:format)                               categories#create
-#           new_category GET    /categories/new(.:format)                           categories#new
-#          edit_category GET    /categories/:id/edit(.:format)                      categories#edit
-#               category GET    /categories/:id(.:format)                           categories#show
-#                        PATCH  /categories/:id(.:format)                           categories#update
-#                        PUT    /categories/:id(.:format)                           categories#update
-#                        DELETE /categories/:id(.:format)                           categories#destroy
 #     product_favourites GET    /products/:product_id/favourites(.:format)          favourites#index
 #                        POST   /products/:product_id/favourites(.:format)          favourites#create
 #  new_product_favourite GET    /products/:product_id/favourites/new(.:format)      favourites#new
@@ -49,6 +42,14 @@
 #                        PATCH  /products/:product_id/line_items/:id(.:format)      line_items#update
 #                        PUT    /products/:product_id/line_items/:id(.:format)      line_items#update
 #                        DELETE /products/:product_id/line_items/:id(.:format)      line_items#destroy
+#     product_categories GET    /products/:product_id/categories(.:format)          categories#index
+#                        POST   /products/:product_id/categories(.:format)          categories#create
+#   new_product_category GET    /products/:product_id/categories/new(.:format)      categories#new
+#  edit_product_category GET    /products/:product_id/categories/:id/edit(.:format) categories#edit
+#       product_category GET    /products/:product_id/categories/:id(.:format)      categories#show
+#                        PATCH  /products/:product_id/categories/:id(.:format)      categories#update
+#                        PUT    /products/:product_id/categories/:id(.:format)      categories#update
+#                        DELETE /products/:product_id/categories/:id(.:format)      categories#destroy
 #               products GET    /products(.:format)                                 products#index
 #                        POST   /products(.:format)                                 products#create
 #            new_product GET    /products/new(.:format)                             products#new
@@ -65,6 +66,7 @@
 #                        PATCH  /orders/:id(.:format)                               orders#update
 #                        PUT    /orders/:id(.:format)                               orders#update
 #                        DELETE /orders/:id(.:format)                               orders#destroy
+#                        GET    /products/:gender(.:format)                         products#search
 #                  login GET    /login(.:format)                                    session#new
 #                        POST   /login(.:format)                                    session#create
 #                        DELETE /login(.:format)                                    session#destroy
@@ -72,13 +74,16 @@
 
 Rails.application.routes.draw do
 
+  root :to => 'pages#home'
+  get '/products/gender/:gender' => 'products#search'
+
   resources :users
-  resources :categories
   resources :products do
     resources :favourites
     resources :reviews
     resources :images
     resources :line_items
+    resources :categories
   end
 
   resources :orders

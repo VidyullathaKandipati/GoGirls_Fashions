@@ -1,2 +1,5 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= "#{@user.firstname} #{@user.lastname}" %></h1>
+<table class="table table-striped">
+  <%= render :partial=>"header" %>
+  <%= render :partial=>"show", locals: {user: @user} %>
+</table>
