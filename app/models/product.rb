@@ -17,5 +17,5 @@ class Product < ActiveRecord::Base
   has_many :favourites
   has_many :reviews
   has_many :line_items
-  has_many_and_belongs_to :categories
+  has_and_belongs_to_many :categories
 end
