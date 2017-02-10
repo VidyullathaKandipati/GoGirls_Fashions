@@ -69,6 +69,7 @@
 #                        POST   /login(.:format)                                    session#create
 #                        DELETE /login(.:format)                                    session#destroy
 #
+
 Rails.application.routes.draw do
 
   root :to => 'pages#home'
