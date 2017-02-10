@@ -1,2 +1,8 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>All users</h1>
+<!-- heading -->
+<table class="table table-striped table-hover">
+  <%= render :partial=>"header"%>
+  <% @users.each do |user| %>
+    <%= render :partial=>"show", :locals=>{user: user} %>
+  <% end %>
+</table>

@@ -1,2 +1,10 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>New user sign up</h1>
+<% if @user.errors.any? %>
+  <ol>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li class="bg-danger"><%= msg %></li>
+  <% end %>
+  </ol>
+<% end %>
+
+<%= render :partial => "form" %>

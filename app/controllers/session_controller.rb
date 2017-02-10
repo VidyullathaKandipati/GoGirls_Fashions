@@ -11,7 +11,7 @@ class SessionController < ApplicationController
     else
       flash[:error] = "Invalid email or password. Signup if you are new user
                        before making reservations."
-      redirect_to new_user_path
+      redirect_to login_path
     end
   end
 

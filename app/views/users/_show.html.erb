@@ -1,0 +1,12 @@
+<tr>
+  <!-- data -->
+  <td><%= user.name%></td>
+  <td><%= user.email%></td>
+  <% if !user.contact.nil? %>
+    <td><%= user.contact%></td>
+  <% end %>
+  <% if !user.address.nil? %>
+    <td><%=user.address%>
+  <% end %>
+  <td><%= link_to "Edit", edit_user_path(user.id), :class=>"btn btn-primary" %></td>
+</tr>
