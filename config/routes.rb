@@ -78,6 +78,9 @@ Rails.application.routes.draw do
   get '/shop/women' => 'pages#female'
   get '/shop/men' => 'pages#male'
 
+  get '/shop/women/:category' => 'pages#womenCategory', :as => 'women_products_category'
+  get '/shop/men/:category' => 'pages#menCategory', :as => 'men_products_category'
+
   get '/products/gender/:gender' => 'products#search'
 
   resources :users

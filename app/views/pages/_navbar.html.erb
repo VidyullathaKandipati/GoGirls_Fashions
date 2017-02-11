@@ -1,1 +1,12 @@
+
+<p>CURRENTLY NOT IN USE</p>
+
+
 <p>Navbar</p>
+
+<% @categories.each do |category| %>
+
+<%= link_to category.name, women_products_category, :class=>"btn btn-primary" %>
+
+
+<% end %>
