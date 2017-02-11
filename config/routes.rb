@@ -75,6 +75,9 @@
 Rails.application.routes.draw do
 
   root :to => 'pages#home'
+  get '/shop/women' => 'pages#female'
+  get '/shop/men' => 'pages#male'
+
   get '/products/gender/:gender' => 'products#search'
 
   resources :users
