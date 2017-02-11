@@ -1,2 +1,19 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h1>New category</h1>
+      <%= form_for @category do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, :class => "form-control", :placeholder => "Category Name", :required => true %>
+        </div>
+        <%= submit_tag 'New Category', :class => 'btn btn-primary'%>
+      <% end %>
+    </div>
+    <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <%=  render :partial => 'categories/list' %>
+  </div>
+  <div class="col-md-1"></div>
+</div>

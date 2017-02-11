@@ -1,2 +1,8 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<h1>Edit Category</h1>
+
+<%= form_for @category do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, :class => "form-control", :placeholder => "Category Name", :required => true %>
+  </div>
+  <%= submit_tag 'Edit Category', :class => 'btn btn-primary'%>
+<% end %>

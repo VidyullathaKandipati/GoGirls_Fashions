@@ -78,12 +78,12 @@ Rails.application.routes.draw do
   get '/products/gender/:gender' => 'products#search'
 
   resources :users
+  resources :categories
   resources :products do
     resources :favourites
     resources :reviews
     resources :images
     resources :line_items
-    resources :categories
   end
 
   resources :orders
