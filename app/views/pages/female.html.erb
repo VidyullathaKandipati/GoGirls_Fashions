@@ -2,8 +2,6 @@
 
 <%=  render :partial => 'pages/banner' %>
 
-
-<p>Navbar</p>
 <% @categories.each do |category| %>
 <%= link_to category.name, women_products_category_path(:category => category.name), :class=>"btn btn-primary" %>
 <% end %>
