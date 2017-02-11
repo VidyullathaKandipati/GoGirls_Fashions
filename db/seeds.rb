@@ -13,12 +13,12 @@ u4 = User.create(name: 'Naomi', email: 'naomi@ga.com', password: 'chicken', admi
 
 Product.destroy_all
 #Female products
-p1= Product.create(cost: 30, size: 's', color: '', gender: 'female', brand:'Vero Moda', info: "Floral printed wrap dress");
-p2= Product.create(cost: 75, size: 's', color: '', gender: 'female', brand:'Vero Moda', info: "Midi Skirt in Satin with Splices in Print");
+p1= Product.create(cost: 30, size: 's', color: '', gender: 'women', brand:'Vero Moda', info: "Floral printed wrap dress");
+p2= Product.create(cost: 75, size: 's', color: '', gender: 'women', brand:'Vero Moda', info: "Midi Skirt in Satin with Splices in Print");
 
 #Male Products
-p3 = Product.create(cost: 50, size: 'm', color: '', gender: 'male', brand:'Jack & Jones', info: "Geometric Print T-Shirt");
-p4 = Product.create(cost: 157, size: 'm', color: 'blue', gender: 'male', brand:'Lee', info: "Low Slim Fit Stretch Blue Legacy Dark Wash Jeans");
+p3 = Product.create(cost: 50, size: 'm', color: '', gender: 'men', brand:'Jack & Jones', info: "Geometric Print T-Shirt");
+p4 = Product.create(cost: 157, size: 'm', color: 'blue', gender: 'men', brand:'Lee', info: "Low Slim Fit Stretch Blue Legacy Dark Wash Jeans");
 
 Image.destroy_all
 #Female images

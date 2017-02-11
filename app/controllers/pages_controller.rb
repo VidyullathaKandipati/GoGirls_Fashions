@@ -2,27 +2,15 @@ class PagesController < ApplicationController
   def home
   end
 
-  def male
+  def shop
     @categories= Category.all
-    @products = Product.where(:gender=>"male")
+    @products = Product.where(:gender=> params[:gender])
   end
 
-  def female
+  def category
     @categories= Category.all
-    @products = Product.where(:gender=>"female")
+    @products = Product.joins(:categories).where('gender = ? and categories.name = ?', params[:gender], params[:category])
+    render "pages/shop"
   end
-
-  def womenCategory
-    @categories= Category.all
-    @products = Product.joins(:categories).where('gender = ? and categories.name = ?', 'female', params[:category])
-    render "pages/female"
-  end
-
-  def menCategory
-    @categories= Category.all
-    @products = Product.joins(:categories).where('gender = ? and categories.name = ?', 'male', params[:category])
-    render "pages/male"
-  end
-
 
 end
