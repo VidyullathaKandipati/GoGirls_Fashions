@@ -10,4 +10,32 @@
   <%= link_to "Edit", edit_product_path(@product.id)%>
   <%= link_to "Delete", product_path(@product.id),
                               :method=>"delete", :data=>{:confirm=>"Are you sure?"} %>
+  <% if @current_user.present? %>
+    <div class="button-center">
+      <%= link_to "Add Favourite", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
+                              :method=>"post" %>
+    </div>
+
+    <div>
+      <h2>Reviews</h2>
+      <% @product.reviews.each do |review| %>
+        <p>
+          <strong>Review:</strong>
+          <%= review.desc %>
+        </p>
+      <% end %>
+
+      <h4>Add review</h4>
+      <%= form_for([@product, @product.reviews.build]) do |f| %>
+      <%= hidden_field_tag :user_id, @current_user.id %>
+      <div class="form-group">
+        <%= f.label :desc %><br>
+        <%= f.text_area :desc, :class=>"form-control textfield-border"  %>
+      </div>
+      <div class="button-center">
+        <%= f.submit :class=>"btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

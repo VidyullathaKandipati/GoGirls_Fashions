@@ -8,7 +8,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="login-nav">
+  <a class="navbar-brand" href="/">
+    <span class="glyphicon glyphicon-home home-box" aria-hidden="true"></span>
+  </a>
+  <br>
 
+  <ul class="nav navbar-nav navbar-right">
+  <% if !@current_user.present? %>
+    <li><%= link_to "New user", new_user_path%></li>
+    <li><%= link_to "Sign In", login_path %></li>
+  <% else %>
+     <li><%= link_to "Edit profile", edit_user_path(@current_user.id) %></li>
+     <li><%= link_to "Logout #{@current_user.name}", login_path,
+                        :method=>"delete" %></li>
+  <% end %>
+  </ul>
+</div>
 <%= yield %>
 
 </body>
