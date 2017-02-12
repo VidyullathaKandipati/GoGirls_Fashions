@@ -1,0 +1,49 @@
+<%= form_for(@product, :html=>{:multipart=>true}) do |f| %>
+
+<div class="row">
+
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+
+<div class="form-group">
+  *<%= f.label :name %>
+  <%= f.text_field :name, :autofocus=>true, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :cost %>
+  <%= f.number_field :cost, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :size %>
+  <%= f.text_field :size, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :color %>
+  <%= f.text_field :color, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :gender %>
+  <%= f.text_field :gender, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :brand %>
+  <%= f.text_field :brand, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :info %>
+  <%= f.text_field :info, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+    <%# f.label :category_id %>
+    <%# options_from_collection_for_select, Category.all, :category_id, :name, :include_blank => true %>
+</div>
+<div class="button-center">
+  <%= f.submit :class=>"btn btn-primary" %>
+</div>
+<% end %>
+</div>
+
+<div class="col-md-3"></div>
+
+</div>

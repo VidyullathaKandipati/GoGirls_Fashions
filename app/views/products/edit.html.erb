@@ -1,2 +1,9 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1>Edit product</h1>
+<% if @product.errors.any? %>
+  <ol>
+  <% @product.errors.full_messages.each do |msg| %>
+    <li class="bg-danger"><%= msg %></li>
+  <% end %>
+  </ol>
+<% end %>
+<%= render :partial=>"form" %>

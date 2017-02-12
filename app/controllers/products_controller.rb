@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(user_params)
+    @product = Product.new(product_params)
     if @product.save
       flash[:create] = "Product created successfully"
       redirect_to products_path
@@ -52,7 +52,11 @@ class ProductsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
+  end
+
+  def product_params
+    params.require(:product).permit(:name, :cost, :size, :color, :gender, :brand, :info)
   end
 
 end

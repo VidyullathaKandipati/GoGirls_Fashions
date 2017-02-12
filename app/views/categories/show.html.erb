@@ -1,2 +1,8 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1>Category</h1>
+<ul>
+    <li> <%= @category.name %> </li>
+    <%= link_to "Edit", edit_product_category_path(@category.id)%>
+    <%= link_to "Delete", product_category_path(@category.id),
+                                  :method=>"delete", :data=>{:confirm=>"Are you sure?"} %>
+
+</ul>
