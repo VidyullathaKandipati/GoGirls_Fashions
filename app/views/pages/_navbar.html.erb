@@ -1,0 +1,3 @@
+<% @categories.each do |category| %>
+<%= link_to category.name, products_category_path(:category => category.name), :class=>"btn btn-primary" %>
+<% end %>

@@ -1,0 +1,9 @@
+
+<% @products.each do |product| %>
+
+  <div class="productListDiv">
+    <img src=<%= product.images[0].url%> class= "productListThumb">
+    <p><%= product.info %> $<%= product.cost %></p>
+    <p><%= product.brand %> </p>
+  </div>
+<% end %>

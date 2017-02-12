@@ -1,12 +1,18 @@
 <h1>All Categories</h1>
-<ul>
-<% @categories.each do |c| %>
-  <div class="col-md-4">
-    <li> <%= c.name %> </li>
-    <%= link_to "Edit", edit_product_category_path(c.id)%>
-    <%= link_to "Delete", product_category_path(c.id),
-                                  :method=>"delete", :data=>{:confirm=>"Are you sure?"} %>
 
-  </div>
-<% end %>
-</ul>
+<div class="row">
+  <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h1>Categories List</h1>
+      <table class="table">
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= link_to "Edit", edit_category_path(:id => category.id), :class=>"btn btn-primary btn-sm"%></td>
+            <td><%= link_to "Delete", category_path(:id => category.id), :method=>'delete', :class=>"btn btn-primary btn-sm"%></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <div class="col-md-7"></div>
+</div>
