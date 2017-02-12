@@ -4,7 +4,7 @@
   <%= @product.name %>
 </div>
 <% @product.images.each do |i| %>
-  <%= cl_image_tag(i) %>
+  <%= cl_image_tag i, :class=>"productListThumb"  %>
 <% end %>
 <div>
   <%= link_to "Edit", edit_product_path(@product.id)%>
