@@ -18,9 +18,15 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    if params[:product][:images].present?
+      params[:product][:images].each do |image|
+        req = Cloudinary::Uploader.upload(image)
+        @product.images << req["public_id"]
+      end
+    end
     if @product.save
       flash[:create] = "Product created successfully"
-      redirect_to products_path
+      redirect_to @product
     else
       render :new
     end
@@ -30,14 +36,20 @@ class ProductsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product is successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+    if params[:product][:images].present?
+      params[:product][:images].each do |image|
+        req = Cloudinary::Uploader.upload(image)
+        @product.images << req["public_id"]
       end
+    end
+
+    @product.update_attributes(product_params)
+
+    if @product.save
+      flash[:create] = "Product updated successfully"
+      redirect_to @product
+    else
+      render :edit
     end
   end
 

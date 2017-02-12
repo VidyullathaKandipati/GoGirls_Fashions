@@ -35,11 +35,15 @@
   <%= f.text_field :info, :required => true, :class=>"form-control textfield-border" %>
 </div>
 <div class="form-group">
+  *<%= f.label :images %>
+  <%= f.file_field :images, :multiple => true, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
     <%# f.label :category_id %>
     <%# options_from_collection_for_select, Category.all, :category_id, :name, :include_blank => true %>
 </div>
 <div class="button-center">
-  <%= f.submit :class=>"btn btn-primary" %>
+  <%= f.submit "Add product", :class=>"btn btn-primary" %>
 </div>
 <% end %>
 </div>

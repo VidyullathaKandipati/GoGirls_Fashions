@@ -1,5 +1,13 @@
 <h1>Product</h1>
-<li> <%= @product.name %> </li>
-<%= link_to "Edit", edit_product_path(@product.id)%>
-<%= link_to "Delete", product_path(@product.id),
+
+<div>
+  <%= @product.name %>
+</div>
+<% @product.images.each do |i| %>
+  <%= cl_image_tag(i) %>
+<% end %>
+<div>
+  <%= link_to "Edit", edit_product_path(@product.id)%>
+  <%= link_to "Delete", product_path(@product.id),
                               :method=>"delete", :data=>{:confirm=>"Are you sure?"} %>
+</div>

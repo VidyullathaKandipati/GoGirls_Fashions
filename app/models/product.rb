@@ -12,6 +12,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  name       :text
+#  images     :text             default("{}"), is an Array
 #
 
 class Product < ActiveRecord::Base
@@ -19,5 +20,4 @@ class Product < ActiveRecord::Base
   has_many :reviews
   has_many :line_items
   has_and_belongs_to_many :categories
-  has_many :images
 end
