@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
     @categories = Category.all
@@ -9,6 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @category = Category.new
   end
 
@@ -22,36 +22,26 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:id])
   end
 
   def update
-    respond_to do |format|
-      if @category.update(catergory_params)
-        format.html { redirect_to @category, notice: 'Category is successfully updated.' }
-        format.json { render :show, status: :ok, location: @category }
-      else
-        format.html { render :edit }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
-    end
+    @category = Category.find(params[:id])
+    @category.update category_params
+    redirect_to new_category_path
   end
 
   def destroy
+    @category = Category.find(params[:id])
     @category.destroy
-    respond_to do |format|
-      format.html { redirect_to product_categories_path, notice: 'Category is successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to new_category_path
+
   end
 
   private
 
-  def set_category
-    @category = Category.find params[:id]
-  end
-
-  def catergory_params
-    params.require(:category).permit(:name)
+  def category_params
+    params.require(:category).permit(:name, :gender)
   end
 
 end

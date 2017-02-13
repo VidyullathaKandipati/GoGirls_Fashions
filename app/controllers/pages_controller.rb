@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def shop
-    @categories= Category.all
+    @categories= Category.where({ gender: [params[:gender], "unisex"]})
     @products = Product.where(:gender=> params[:gender])
   end
 
