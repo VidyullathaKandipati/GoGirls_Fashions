@@ -2,10 +2,21 @@
 <html>
 <head>
   <title>GoGirlsFashions</title>
+
+
+
   <!-- <%= cloudinary_js_config %> -->
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+   <script type="text/javascript">
+    Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
+   </script>
+
 </head>
 <body class="<%= params[:controller] %> <%=params[:action]%>">
 
