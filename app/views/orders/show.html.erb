@@ -2,9 +2,10 @@
 
 <ul>
   <% @order.line_items.each do |item| %>
-    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Size: <%= item.product.size %> | Price: <%= item.product.cost %></li>
+    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Size: <%= item.product.size %> | Price: <%= number_to_currency(item.product.cost) %></li>
   <% end %>
 </ul>
-<div id="totalCost">
-  $<%= @order.total_cost %>
+<div id="totalCost" class="totalCost">
+
+  <%= number_to_currency(@order.total_cost) %>
 </div>
