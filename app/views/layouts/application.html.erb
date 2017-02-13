@@ -25,6 +25,9 @@
   <% end %>
   </ul>
 </div>
+<div class="cart">
+  <%= link_to "Cart", order_path(:id => @order.id) %>
+</div>
 <%= yield %>
 
 </body>

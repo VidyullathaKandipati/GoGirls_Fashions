@@ -15,6 +15,7 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :orders
   has_many :favourites
   has_many :reviews
   has_secure_password
