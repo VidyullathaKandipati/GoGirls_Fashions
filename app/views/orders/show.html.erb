@@ -1,5 +1,13 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>Cart</h1>
+
+
+
+<ul>
+  <%= @order.line_items.each do |item| %>
+    <li><%= item.product.name %></li>
+  <% end %>
+</ul>
+
 
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

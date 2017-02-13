@@ -20,7 +20,12 @@ before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   def create
     product = Product.find(params[:product_id])
     @line_item = @order.line_items.build(product: product)
+
+    @line_item.save
+
     redirect_to product_path(params[:product_id])
+
+
   end
 
   def edit
