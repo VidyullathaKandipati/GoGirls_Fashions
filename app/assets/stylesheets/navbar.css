@@ -4,9 +4,32 @@ img.nav-avatar {
   border:1px solid #fff;
   margin-right:10px;
   border-radius: 50%;
+  ;
 }
 
 
 .navbar-brand, .navbar-nav > li > a{
   line-height: 32px;
+
+}
+
+.navbar{
+  background-color: #111
+
+}
+
+#bs-example-navbar-collapse-1{
+  border:1px solid #111;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: white;
+}
+.navbar-default .navbar-brand{
+  color: white;
+}
+
+.navbar-default{
+  border-color: 1px solid #111;;
+
 }

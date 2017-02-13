@@ -17,7 +17,8 @@
               <%= image_tag "women.jpg", :class => 'mirror__img' %>
             </div>
           </div>
-          <h2 class="slide__title">Women</h2>
+          <h2 class="slide__title"><%= link_to "Women", shop_path(:gender => 'women')%></h2>
+
         </div>
         <div class="slide">
           <div class="mirror" data-visible-area="0.8">
@@ -28,7 +29,7 @@
               <%= image_tag "men.jpg", :class => 'mirror__img' %>
             </div>
           </div>
-          <h2 class="slide__title">Men</h2>
+            <h2 class="slide__title"><%= link_to "Men", shop_path(:gender => 'men')%></h2>
         </div>
         <!-- <div class="slide">
           <div class="mirror" data-visible-area="0.75">
