@@ -2,7 +2,7 @@
 
 <ul>
   <% @order.line_items.each do |item| %>
-    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Size: <%= item.product.size %> | Price: <%= number_to_currency(item.product.cost) %></li>
+    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %>&times; | Size: <%= item.product.size %> | Price: <%= number_to_currency(item.product.cost) %></li>
   <% end %>
 </ul>
 
@@ -14,3 +14,6 @@
 </div>
 
 <%= link_to "Pay with card", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
+
+<%= button_to 'Empty cart', @order, method: :delete,
+date: {confirm: 'Are you sure?'} %>
