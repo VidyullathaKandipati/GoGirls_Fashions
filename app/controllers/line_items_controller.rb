@@ -19,8 +19,9 @@ before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   def create
     product = Product.find(params[:product_id])
-    @line_item = @order.line_items.build(product: product)
-    @line_item.quantity += 1
+    @line_item = @order.add_product(product.id)
+    # @line_item = @order.line_items.build(product: product)
+    # @line_item.quantity += 1
 
     if @line_item.save
       flash[:msg] = "Item added to the cart."
@@ -32,5 +33,10 @@ before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+  end
+
+  private
+  def line_item_params
+    params.require(:line_item).permit(:product_id, :order_id, :quantity)
   end
 end

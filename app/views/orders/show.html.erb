@@ -1,10 +1,19 @@
-<h1>Cart</h1>
+<h1>Your Cart</h1>
 
 <ul>
   <% @order.line_items.each do |item| %>
-    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Order No: <%= item.order_id %></li>
+    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %>&times; | Size: <%= item.product.size %> | Price: <%= number_to_currency(item.product.cost) %></li>
   <% end %>
 </ul>
 
-<!-- <%= link_to 'Edit', edit_order_path(@order.id) %> |
-<%= link_to 'Back', orders_path %> -->
+
+<div id="totalCost" class="totalCost">
+
+  <%= number_to_currency(@order.total_cost) %>
+
+</div>
+
+<%= link_to "Pay with card", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
+
+<%= button_to 'Empty cart', @order, method: :delete,
+date: {confirm: 'Are you sure?'} %>

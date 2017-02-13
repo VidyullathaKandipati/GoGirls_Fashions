@@ -1,5 +1,96 @@
-<h1>Men/Women</h1>
+<!-- <h1>Men/Women</h1>
 <h1>Homepage</h1>
 
 <%= link_to "Men", shop_path(:gender => 'men'), :class=>"btn btn-default btn-sm"%>
-<%= link_to "Women", shop_path(:gender => 'women'), :class=>"btn btn-deafult btn-sm"%>
+<%= link_to "Women", shop_path(:gender => 'women'), :class=>"btn btn-deafult btn-sm"%> -->
+<div class="demo1">
+  <main>
+<section class="content content--full">
+      <h2 class="page-title">Go Girls Fashion</h2>
+      <div class="slideshow">
+        <div class="slide">
+          <div class="mirror" data-visible-area="0.85">
+            <div class="mirror__side mirror__side--one">
+              <%= image_tag "women.jpg", :class => 'mirror__img' %>
+            </div>
+            <div class="mirror__side mirror__side--two">
+              <%= image_tag "women.jpg", :class => 'mirror__img' %>
+            </div>
+          </div>
+          <h2 class="slide__title"><%= link_to "Women", shop_path(:gender => 'women')%></h2>
+
+        </div>
+        <div class="slide">
+          <div class="mirror" data-visible-area="0.8">
+            <div class="mirror__side mirror__side--one">
+              <%= image_tag "men.jpg", :class => 'mirror__img' %>
+            </div>
+            <div class="mirror__side mirror__side--two">
+              <%= image_tag "men.jpg", :class => 'mirror__img' %>
+            </div>
+          </div>
+            <h2 class="slide__title"><%= link_to "Men", shop_path(:gender => 'men')%></h2>
+        </div>
+        <!-- <div class="slide">
+          <div class="mirror" data-visible-area="0.75">
+            <div class="mirror__side mirror__side--one">
+              <%= image_tag "3.jpg", :class => 'mirror__img' %>
+            </div>
+            <div class="mirror__side mirror__side--two">
+              <%= image_tag "3.jpg", :class => 'mirror__img' %>
+            </div>
+          </div>
+          <h2 class="slide__title">Matuba</h2>
+        </div>
+        <div class="slide">
+          <div class="mirror" data-visible-area="0.8">
+            <div class="mirror__side mirror__side--one">
+              <%= image_tag "4.jpg", :class => 'mirror__img' %>
+            </div>
+            <div class="mirror__side mirror__side--two">
+              <%= image_tag "4.jpg",  :class => 'mirror__img' %>
+            </div>
+          </div>
+          <h2 class="slide__title">Boris</h2>
+        </div> -->
+        <nav class="slideshow__nav">
+          <button class="btn btn--nav">Women</button>
+          <button class="btn btn--nav">Men</button>
+          <!-- <button class="btn btn--nav">Matuba</button>
+          <button class="btn btn--nav">Boris</button> -->
+        </nav>
+      </div><!-- /slideshow -->
+</section>
+  </main>
+
+  <script src="assets/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/anime.min.js"></script>
+  <script src="assets/mirrorFx.js"></script>
+  <script src="assets/slideshow.js"></script>
+  <script>
+  (function() {
+
+    function init() {
+      new Slideshow(document.querySelector('.slideshow'));
+    }
+
+    // Fake loading time..
+    var startTime = new Date().getTime();
+    imagesLoaded(document.querySelector('main'), function() {
+      var elapsed = new Date().getTime() - startTime,
+        initFn = function() {
+          document.body.classList.remove('loading');
+          setTimeout(init, 50);
+        };
+
+      if( elapsed > 2000) {
+        initFn();
+      }
+      else {
+        setTimeout(initFn, 1000);
+      }
+    });
+
+  })();
+  </script>
+</div>

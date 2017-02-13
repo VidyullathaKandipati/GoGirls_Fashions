@@ -1,0 +1,397 @@
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ body.home {
+	font-family: 'Roboto', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+	color: #909090;
+	background: #111;
+}
+
+ body.home a {
+	text-decoration: none;
+	color: #909090;
+	outline: none;
+}
+
+ body.home a:hover,
+ body.home a:focus {
+	color: #fff;
+}
+
+ body.home .hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
+
+
+/* Icons */
+
+ body.home .icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+
+/* Page Loader */
+
+ body.home::before {
+	content: 'Loading...';
+	font-family: 'Montserrat';
+	letter-spacing: 0.2em;
+	text-indent: -0.2em;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #000;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #facb7a;
+	z-index: 1000;
+	transition: transform 0.5s;
+}
+
+body.home .loading::before {
+	transform: translate3d(0,100%,0);
+}
+
+/* Content */
+
+body.home .content {
+	text-align: center;
+}
+
+body.home .content--full {
+	height: 100vh;
+	min-height: 600px;
+	overflow: hidden;
+}
+
+body.home .flexy {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+body.home .flexy--center {
+	justify-content: center;
+}
+
+body.home .flexy--row {
+	flex-direction: row;
+}
+
+
+/* Slideshow */
+
+body.home .slideshow {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 5.5em);
+}
+
+body.home .slide {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 0 1em 0;
+}
+
+body.home .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	margin: 0;
+	opacity: 0;
+}
+
+body.home .slide--current {
+	opacity: 1;
+}
+
+body.home .slide__title {
+	font-family: 'Arapey';
+	font-weight: normal;
+	position: relative;
+	z-index: 10;
+	font-size: 8vw;
+	margin: 0;
+	line-height: 0.8;
+	color: #8dbd2b;
+}
+
+body.home .slide .mirror {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+body.home .slideshow__nav {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	bottom: 0;
+	right: 0;
+	padding: 0 2em 1em;
+	overflow: hidden;
+}
+
+body.home .slideshow__nav--inline {
+	display: block;
+	top: 30vh;
+	left: 0;
+	width: 100%;
+}
+
+body.home .slideshow__nav--inline .btn {
+	display: inline-block;
+	margin: 0 1em;
+}
+
+body.home .slideshow__nav--nopad {
+	padding: 0;
+}
+
+.btn {
+	border: 0;
+	background: 0;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: relative;
+	padding: 0.25em 0;
+	margin: 0.5em 0 0.75em;
+	color: inherit;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.3s;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn--current {
+	border-color: currentColor;
+}
+
+.btn--nav:last-child {
+	margin-bottom: 0;
+}
+
+.btn--line {
+	width: 100%;
+	text-align: right;
+	padding: 0.15em 30px 0.15em 0;
+	transition: color 0.3s;
+}
+
+.btn--line::before {
+	content: '';
+	width: 10px;
+	height: 2px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	z-index: -1;
+	margin-top: -1px;
+	background: #ffb74d;
+	transition: transform 0.3s;
+}
+
+.btn--line.btn--current {
+	border-color: transparent;
+	color: #fff;
+}
+
+.btn--line.btn--current::before {
+	transform: scale3d(26, 20, 1);
+}
+
+.btn--play {
+	top: 70vh;
+	left: 50%;
+	color: #ffb74d;
+	font-size: 3em;
+	transform: translateX(-50%);
+	position: absolute;
+	transition: color 0.3s;
+}
+
+.btn--play:hover {
+	color: #fff;
+}
+
+.link--sponsor {
+	position: absolute;
+	left: 0;
+	margin: 0 0 2em 2em;
+	bottom: 0;
+}
+
+.page-title {
+	font-family: 'Montserrat';
+	position: absolute;
+	top: 25vh;
+	text-align: center;
+	width: 100%;
+	padding: 0 1em;
+	margin: 0;
+	font-size: 2em;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+ body.home .overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background: #A8A9C8 url(../img/bg.jpg);
+	background-size: cover;
+}
+
+/* Themes */
+
+ body.home .page-title {
+	z-index: 10;
+	font-size: 0.85em;
+    font-family: inherit;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    top: 38vh;
+}
+
+ body.home .slide:first-child .slide__title,
+ body.home .slideshow__nav .btn:first-child {
+	color: #fff;
+}
+
+ body.home .slide:nth-child(2) .slide__title,
+ body.home .slideshow__nav .btn:nth-child(2) {
+	color: #fff;
+}
+
+ body.home .slide:nth-child(3) .slide__title,
+ body.home .slideshow__nav .btn:nth-child(3) {
+	color: #fff;
+}
+
+ body.home .slide:nth-child(4) .slide__title,
+ body.home .slideshow__nav .btn:nth-child(4) {
+	color: #fff;
+}
+
+.mirror {
+	width: 60vw;
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.mirror[data-layout="vertical"] {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.mirror__side {
+	flex: none;
+	overflow: hidden;
+	width: 50%;
+	display: flex;
+	align-items: flex-end;
+}
+
+.mirror[data-layout="vertical"] .mirror__side{
+	height: 50%;
+	width: 100%;
+}
+
+.mirror__img {
+	display: block;
+	width: 100%;
+	transform: translate3d(100%,0,0);
+}
+
+.mirror[data-layout="vertical"] .mirror__img {
+	transform: translate3d(0,100%,0);
+}
+
+.mirror__side--two {
+	transform: scale3d(-1,1,1);
+}
+
+.mirror[data-layout="vertical"] .mirror__side--two {
+	transform: scale3d(1,-1,1);
+}
+
+@media screen and (max-width: 50em) {
+	.codrops-header {
+		justify-content: center;
+	}
+	.link--sponsor {
+		width: 100%;
+		margin: 0;
+		padding: 1em;
+	}
+	.demos {
+		width: 100%;
+		margin: 1em 0 0;
+	}
+	.page-title {
+		font-size: 1.25em;
+	}
+	.slideshow__nav {
+		width: 100%;
+		padding: 0;
+		bottom: auto;
+		top: 0;
+		display: block;
+	}
+	.page-title {
+		top: 8em;
+	}
+	.demo-3 .slide__title {
+		font-size: 2em;
+	}
+	.btn {
+		width: auto;
+		padding: 0;
+		display: inline-block;
+		margin: 0.15em;
+	}
+	.btn--line::before {
+		display: none;
+	}
+	.btn--current.btn--line::before {
+		transform: none;
+		display: block;
+		top: auto;
+		bottom: -0.5em;
+		width: 100%;
+	}
+}
