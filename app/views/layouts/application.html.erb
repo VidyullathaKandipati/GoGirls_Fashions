@@ -19,6 +19,7 @@
     <li><%= link_to "New user", new_user_path%></li>
     <li><%= link_to "Sign In", login_path %></li>
   <% else %>
+     <li><%# link_to "Shopping bag", order_path( @order ) %></li>
      <li><%= link_to "Edit profile", edit_user_path(@current_user.id) %></li>
      <li><%= link_to "Logout #{@current_user.name}", login_path,
                         :method=>"delete" %></li>

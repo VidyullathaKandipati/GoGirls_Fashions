@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :fetch_user
+  # before_action :set_order
 
   private
   def fetch_user
