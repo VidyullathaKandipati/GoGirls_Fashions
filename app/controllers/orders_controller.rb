@@ -26,9 +26,16 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    order = Order.find params[:id]
-    order.destroy
-    redirect_to #the page that you were on
+    @order = Order.find params[:id]
+    @order.destroy if @order.id == session[:order_id]
+    session[:order_id] = nil
+
+    respond_to do |format|
+      format.html {redirect_to root_path, notice: 'Your cart is currently empty'}
+    end
+
+    # redirect_to shop_path
+    #the page that you were on
   end
 
 
