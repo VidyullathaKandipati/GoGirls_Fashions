@@ -21,4 +21,9 @@ class User < ActiveRecord::Base
 
   validates :email, :presence => true, :uniqueness => true
   validates_confirmation_of :password
+
+  def already_likes?(product)
+    puts "======================", self.id, product.id, self.favourites.where('product_id = ?', product.id).inspect
+    self.favourites.where('product_id = ?', product.id).size > 0
+  end
 end
