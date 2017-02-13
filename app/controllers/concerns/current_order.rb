@@ -7,7 +7,8 @@ module CurrentOrder
     @order = Order.find(session[:order_id])
 
     rescue ActiveRecord::RecordNotFound
-    @order = Order.create
+
+    @order = Order.create(user_id: @current_user.id, status: false)
     session[:order_id] = @order.id
   end
 end
