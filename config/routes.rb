@@ -91,7 +91,9 @@ Rails.application.routes.draw do
     resources :line_items
   end
 
-  resources :orders
+  resources :orders do
+    resources :charges
+  end
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
