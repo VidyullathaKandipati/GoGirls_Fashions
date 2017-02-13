@@ -1,14 +1,10 @@
 <h1>Cart</h1>
 
-
-
 <ul>
-  <%= @order.line_items.each do |item| %>
-    <li><%= item.product.name %></li>
+  <% @order.line_items.each do |item| %>
+    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Order No: <%= item.order_id %></li>
   <% end %>
 </ul>
 
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<!-- <%= link_to 'Edit', edit_order_path(@order.id) %> |
+<%= link_to 'Back', orders_path %> -->

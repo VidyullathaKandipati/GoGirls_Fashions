@@ -18,5 +18,5 @@ class ApplicationController < ActionController::Base
   def check_if_logged_in
     redirect_to new_user_path unless @current_user.present?
   end
-  
+
 end

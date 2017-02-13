@@ -20,12 +20,15 @@ before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   def create
     product = Product.find(params[:product_id])
     @line_item = @order.line_items.build(product: product)
+    @line_item.quantity += 1
 
-    @line_item.save
+    if @line_item.save
+      flash[:msg] = "Item added to the cart."
+    else
+      flash[:error] = "Could not add item to the cart."
+    end
 
     redirect_to product_path(params[:product_id])
-
-
   end
 
   def edit
