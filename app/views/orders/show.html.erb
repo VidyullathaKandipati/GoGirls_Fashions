@@ -1,10 +1,10 @@
-<h1>Cart</h1>
+<h1>Your Cart</h1>
 
 <ul>
   <% @order.line_items.each do |item| %>
-    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Order No: <%= item.order_id %></li>
+    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %> | Size: <%= item.product.size %> | Price: <%= item.product.cost %></li>
   <% end %>
 </ul>
-
-<!-- <%= link_to 'Edit', edit_order_path(@order.id) %> |
-<%= link_to 'Back', orders_path %> -->
+<div id="totalCost">
+  $<%= @order.total_cost %>
+</div>

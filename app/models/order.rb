@@ -12,4 +12,8 @@
 class Order < ActiveRecord::Base
   belongs_to :user
   has_many :line_items, dependent: :destroy
+
+  def total_cost
+    line_items.to_a.sum {|item| item.total_cost}
+  end
 end
