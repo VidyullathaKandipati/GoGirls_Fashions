@@ -27,7 +27,6 @@
 	overflow: hidden;
 	width: 0;
 	height: 0;
-	pointer-events: none;
 }
 
 
@@ -62,7 +61,6 @@
 	height: 100%;
 	background: #facb7a;
 	z-index: 1000;
-	pointer-events: none;
 	transition: transform 0.5s;
 }
 
@@ -113,7 +111,6 @@ body.home .slide {
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 0 1em 0;
-	pointer-events: none;
 }
 
 body.home .slide {
@@ -122,12 +119,10 @@ body.home .slide {
 	left: 0;
 	height: 100%;
 	margin: 0;
-	pointer-events: none;
 	opacity: 0;
 }
 
 body.home .slide--current {
-	pointer-events: auto;
 	opacity: 1;
 }
 
@@ -140,7 +135,6 @@ body.home .slide__title {
 	margin: 0;
 	line-height: 0.8;
 	color: #8dbd2b;
-	pointer-events: none;
 }
 
 body.home .slide .mirror {
@@ -168,13 +162,11 @@ body.home .slideshow__nav--inline {
 	top: 30vh;
 	left: 0;
 	width: 100%;
-	pointer-events: none;
 }
 
 body.home .slideshow__nav--inline .btn {
 	display: inline-block;
 	margin: 0 1em;
-	pointer-events: auto;
 }
 
 body.home .slideshow__nav--nopad {
@@ -261,7 +253,6 @@ body.home .slideshow__nav--nopad {
 	font-family: 'Montserrat';
 	position: absolute;
 	top: 25vh;
-	pointer-events: none;
 	text-align: center;
 	width: 100%;
 	padding: 0 1em;
