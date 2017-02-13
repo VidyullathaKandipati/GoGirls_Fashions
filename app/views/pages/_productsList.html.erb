@@ -1,9 +1,10 @@
 
 <% @products.each do |product| %>
-
+  <%= link_to product_path(:id => product.id) do%>
   <div class="productListDiv">
-    <%= cl_image_tag product.images.first, :class=>"productListThumb" %> 
+    <%= cl_image_tag product.images.first, :class=>"productListThumb" %>
     <p><%= product.info %> $<%= product.cost %></p>
     <p><%= product.brand %> </p>
   </div>
+  <% end %>
 <% end %>
