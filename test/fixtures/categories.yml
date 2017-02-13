@@ -6,6 +6,7 @@
 #  name       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  gender     :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

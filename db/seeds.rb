@@ -32,12 +32,12 @@ p4 = Product.create(name: 'Blue jeans', cost: 157, size: 'm', color: 'blue', gen
 
 
 Category.destroy_all
-c1 = Category.create :name => 'pants'
-c2 = Category.create :name => 'dresses'
-c3 = Category.create :name => 'jackets'
-c4 = Category.create :name => 'skirts'
-c5 = Category.create :name => 'shorts'
-c6 = Category.create :name => 'shirts'
+c1 = Category.create(name: 'pants', gender: 'unisex');
+c2 = Category.create(name: 'dresses', gender: 'women');
+c3 = Category.create(name: 'jackets', gender: 'unisex');
+c4 = Category.create(name: 'skirts', gender: 'women');
+c5 = Category.create(name: 'shorts', gender: 'unisex');
+c6 = Category.create(name: 'shirts', gender: 'unisex');
 
 # p1.images << i1
 # p2.images << i2
