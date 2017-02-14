@@ -39,12 +39,9 @@
 
   </table>
 
-<<<<<<< HEAD
-=======
-<%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
->>>>>>> c2a93b94603cf19f6cab09963aa2003e9ae11d6c
 
-  <%= link_to "Pay with card", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
+<%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
+
 
   <%= button_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'} %>
 
