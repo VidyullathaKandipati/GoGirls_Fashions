@@ -95,6 +95,8 @@ Rails.application.routes.draw do
     resources :charges
   end
 
+  get '/thanks' => 'charges#thanks'
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'

@@ -14,4 +14,6 @@ class PagesController < ApplicationController
     render "pages/shop"
   end
 
+
+
 end
