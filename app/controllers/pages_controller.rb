@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def shop
     @products = Product.where(:gender=> params[:gender])
     @categories = Category.where({ gender: [params[:gender], "unisex"]})
+    @gender = params[:gender]
 
   end
 
