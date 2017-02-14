@@ -1,6 +1,9 @@
 
+
 <div class="container">
   <h1>Your Cart</h1>
+
+<%=  render :partial => 'pages/womenmen' %>
 
   <table class="table">
 
@@ -30,12 +33,16 @@
         <tr>
           <td colspan="5" ></td>
           <td colspan="2" class="totalCost"><%= number_to_currency(@order.total_cost) %></td>
-      
+
         </tr>
 
 
   </table>
 
+<<<<<<< HEAD
+=======
+<%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
+>>>>>>> c2a93b94603cf19f6cab09963aa2003e9ae11d6c
 
   <%= link_to "Pay with card", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
 

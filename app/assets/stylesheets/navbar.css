@@ -33,3 +33,19 @@ img.nav-avatar {
   border-color: 1px solid #111;;
 
 }
+
+.filters{
+  margin: 0 10px 15px;
+  border-bottom: 1px solid #7d7d7d;
+  background: #fff;
+  text-align: left;
+  font-size: 14px;
+  display: inline-flex;
+}
+
+.box{
+
+  width: 100%;
+  margin: 21px 0;
+
+}
