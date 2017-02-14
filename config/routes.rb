@@ -91,6 +91,8 @@ Rails.application.routes.draw do
     resources :line_items
   end
 
+  delete '/line_items/:id' => 'line_items#destroy', :as => 'lineitem_destroy'
+
   resources :orders do
     resources :charges
   end

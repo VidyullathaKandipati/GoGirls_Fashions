@@ -1,19 +1,44 @@
-<h1>Your Cart</h1>
 
-<ul>
-  <% @order.line_items.each do |item| %>
-    <li>Product: <%= item.product.name %> | Quantity: <%= item.quantity %>&times; | Size: <%= item.product.size %> | Price: <%= number_to_currency(item.product.cost) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Your Cart</h1>
+
+  <table class="table">
+
+    <tr>
+      <td> </td>
+      <td>Name</td>
+      <td>Size</td>
+      <td>Unit Price</td>
+      <td>Quantity</td>
+      <td>Total Price</td>
+      <td> </td>
+    </tr>
+    <% @order.line_items.each do |item| %>
+
+      <tr>
+        <td><%= item.product.images[0] %>IMAGE TO COME</td>
+        <td><%= item.product.name %></td>
+        <td><%= item.product.size %></td>
+        <td><%= number_to_currency(item.product.cost) %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency(item.quantity * item.product.cost) %></td>
+        <td><%= link_to 'x', lineitem_destroy_path(item.id), :method => 'delete' %></td>
+
+      </tr>
+      <% end %>
+
+        <tr>
+          <td colspan="5" ></td>
+          <td colspan="2" class="totalCost"><%= number_to_currency(@order.total_cost) %></td>
+      
+        </tr>
 
 
-<div id="totalCost" class="totalCost">
+  </table>
 
-  <%= number_to_currency(@order.total_cost) %>
+
+  <%= link_to "Pay with card", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
+
+  <%= button_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'} %>
 
 </div>
-
-<%= link_to "Pay with card", new_order_charge_path(:order_id => @order.id), :class=>"btn btn-primary btn-sm"%>
-
-<%= button_to 'Empty cart', @order, method: :delete,
-date: {confirm: 'Are you sure?'} %>
