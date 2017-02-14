@@ -3,6 +3,8 @@
 
 <%= link_to "Men", shop_path(:gender => 'men'), :class=>"btn btn-default btn-sm"%>
 <%= link_to "Women", shop_path(:gender => 'women'), :class=>"btn btn-deafult btn-sm"%> -->
+<%=  render :partial => 'layouts/navbarHomepage' %>
+
 <div class="demo1">
   <main>
 <section class="content content--full">
@@ -11,10 +13,10 @@
         <div class="slide">
           <div class="mirror" data-visible-area="0.85">
             <div class="mirror__side mirror__side--one">
-              <%= image_tag "women.jpg", :class => 'mirror__img' %>
+              <%= image_tag "women10.jpg", :class => 'mirror__img' %>
             </div>
             <div class="mirror__side mirror__side--two">
-              <%= image_tag "women.jpg", :class => 'mirror__img' %>
+              <%= image_tag "women10.jpg", :class => 'mirror__img' %>
             </div>
           </div>
           <h2 class="slide__title"><%= link_to "Women", shop_path(:gender => 'women')%></h2>
@@ -23,10 +25,10 @@
         <div class="slide">
           <div class="mirror" data-visible-area="0.8">
             <div class="mirror__side mirror__side--one">
-              <%= image_tag "men.jpg", :class => 'mirror__img' %>
+              <%= image_tag "men11.jpg", :class => 'mirror__img' %>
             </div>
             <div class="mirror__side mirror__side--two">
-              <%= image_tag "men.jpg", :class => 'mirror__img' %>
+              <%= image_tag "men11.jpg", :class => 'mirror__img' %>
             </div>
           </div>
             <h2 class="slide__title"><%= link_to "Men", shop_path(:gender => 'men')%></h2>
