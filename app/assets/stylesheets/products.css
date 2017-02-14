@@ -1,0 +1,20 @@
+/* assigning a class to the body or parent element is so called NameSpacing */
+body.products.show {
+}
+
+/*body.products.show main{
+  margin-top: 100px;
+}
+
+body.products.show .navbar{
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.products.show .navbar a{
+  color: #fff;
+}
+
+body.products.show .navbar .blackfont{
+  color: #fff;
+}*/

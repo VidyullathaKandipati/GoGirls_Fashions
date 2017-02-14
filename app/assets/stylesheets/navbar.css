@@ -13,10 +13,6 @@ img.nav-avatar {
 
 }
 
-.navbar{
-  background-color: #111
-
-}
 
 #bs-example-navbar-collapse-1{
   border:1px solid #111;
@@ -36,11 +32,11 @@ img.nav-avatar {
 
 .filters{
   margin: 0 10px 15px;
-  border-bottom: 1px solid #7d7d7d;
   background: #fff;
   text-align: left;
   font-size: 14px;
   display: inline-flex;
+  border-bottom: 1px solid black;
 }
 
 .box{
