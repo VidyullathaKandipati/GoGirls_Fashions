@@ -36,7 +36,9 @@
   </ul>
 </div>
 <div class="cart">
-  <%= link_to "Cart", order_path(:id => @order.id) %>
+  <% if @current_user.present? %>
+    <%= link_to "Cart", order_path(:id => @order.id) %>
+  <% end %>
 </div>
 <body class="<%= params[:controller] %> <%=params[:action]%>">
 
