@@ -6,7 +6,7 @@ class LineItemsController<ApplicationController
 
 before_action :set_order, only: [:create]
 
-before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+#before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -33,6 +33,12 @@ before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+  end
+
+  def destroy
+    @item = LineItem.find params[:id]
+    @item.destroy
+    redirect_to :back
   end
 
   private

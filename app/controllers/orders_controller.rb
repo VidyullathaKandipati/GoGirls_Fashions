@@ -38,6 +38,10 @@ class OrdersController < ApplicationController
     #the page that you were on
   end
 
+  def remove_item product_id, order_item
+    order_item.delete(product_id)
+  end
+
 
   private
 
