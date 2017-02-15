@@ -28,6 +28,8 @@
 
 
     <% if @current_user.present? %>
+
+
     <li>
       <%= link_to "Cart", order_path(:id => @order.id), :class => "blackfont"%>
     </li>
