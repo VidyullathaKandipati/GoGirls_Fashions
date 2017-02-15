@@ -49,6 +49,7 @@ div.col-xs-12.col-md-4.image-container a{
 
 img.img-responsive{
       width: 311px;
+
 }
 
 div.overlay{
@@ -56,7 +57,8 @@ div.overlay{
   color: black;
 }
 .image-container .overlay{
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  padding: 20px 1px 0 26px;
 }
 .la {
  justify-content: center;
