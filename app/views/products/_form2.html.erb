@@ -21,10 +21,7 @@
   *<%= f.label :color %>
   <%= f.text_field :color, :required => true, :class=>"form-control textfield-border" %>
 </div>
-<div class="form-group">
-  *<%= f.label :gender %>
-  <%= f.text_field :gender, :required => true, :class=>"form-control textfield-border" %>
-</div>
+
 <div class="form-group">
   *<%= f.label :brand %>
   <%= f.text_field :brand, :required => true, :class=>"form-control textfield-border" %>
@@ -36,6 +33,10 @@
 <div class="form-group">
   *<%= f.label :images %>
   <%= f.file_field :images, :multiple => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+    *<%= f.label :gender %>
+    <%= f.select :gender, [['women'],['men'],['unisex']], :include_blank => false, :required => true %>
 </div>
 <div class="form-group">
 
