@@ -45,10 +45,10 @@
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btnborder btn btn-primary btn-sm"%>
+    <%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btnborder btn btn-primary"%>
 
 
-    <%= link_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'}, :class=>"btnborder btn btn-primary btn-sm" %>
+    <%= link_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'}, :class=>"btnborder btn btn-primary " %>
     </div>
   <div class="col-md-4"></div>
 </div>

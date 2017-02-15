@@ -7,6 +7,13 @@ img.nav-avatar {
   ;
 }
 
+.nav > li > a:hover {
+  color:black;
+}
+
+.nav > li > a:selected {
+  color:black;
+}
 
 .navbar-brand, .navbar-nav > li > a {
   line-height: 32px;
@@ -21,6 +28,8 @@ img.nav-avatar {
 .navbar-default .navbar-nav > li > a{
   color: white;
 }
+
+
 .navbar-default .navbar-brand{
   color: white;
 }
@@ -46,4 +55,8 @@ img.nav-avatar {
 
 nav. box filters path {
   text-align: center;
+}
+
+nav.dropdown:hover{
+  color:black;
 }
