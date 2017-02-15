@@ -17,6 +17,7 @@
   border-color: black;
 }
 
+
 .image-container .overlay{
   position: relative;
   background:rgba(0,0,0,.75);
@@ -56,4 +57,7 @@ div.overlay{
 }
 .image-container .overlay{
   background: rgba(0, 0, 0, 0.1);
+}
+.la {
+ justify-content: center;
 }
