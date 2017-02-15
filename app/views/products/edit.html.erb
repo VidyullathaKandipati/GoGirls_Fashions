@@ -1,10 +1,17 @@
 <%=  render :partial => 'layouts/navbarInner' %>
-<h1>Edit product</h1>
-<% if @product.errors.any? %>
-  <ol>
-  <% @product.errors.full_messages.each do |msg| %>
-    <li class="bg-danger"><%= msg %></li>
-  <% end %>
-  </ol>
-<% end %>
-<%= render :partial=>"form" %>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <h1>Edit product</h1>
+    <% if @product.errors.any? %>
+      <ol>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li class="bg-danger"><%= msg %></li>
+      <% end %>
+      </ol>
+    <% end %>
+    <%= render :partial=>"form2" %>
+  </div>
+  <div class="col-md-6"></div>
+</div>
