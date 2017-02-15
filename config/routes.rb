@@ -82,6 +82,8 @@ Rails.application.routes.draw do
 
   get '/products/gender/:gender' => 'products#search'
 
+  get'/wishlist' => 'users#wishlist', :as => 'wishlist'
+  
   resources :users
   resources :categories
   resources :products do

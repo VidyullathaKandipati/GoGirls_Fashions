@@ -18,7 +18,7 @@
         <% if flash[:msg].present? %>
           <p class="bg-danger"><%= flash[:msg] %></p>
         <% end %>
-        <%= link_to "Add to Cart", product_line_items_path(product_id: @product.id), :class=>"btn btn-primary btn-sm" %>
+        <%= button_to "Add to Cart", product_line_items_path(product_id: @product.id), :class=>"btn btn-primary btn-sm" %>
       </div>
         <div class="button-center">
           <% if @current_user.already_likes?(@product) %>
@@ -51,11 +51,10 @@
         <%= form_for([@product, @product.reviews.build]) do |f| %>
         <%= hidden_field_tag :user_id, @current_user.id %>
         <div class="form-group">
-          <%= f.label :desc, 'Add Review' %><br>
           <%= f.text_area :desc, :class=>"form-control textfield-border"  %>
         </div>
         <div class="button-center">
-          <%= f.submit :class=>"btn btn-primary" %>
+          <%= f.submit 'Add Review', :class=>"btn btn-primary btn-sm" %>
         </div>
         <% end %>
       </div>
