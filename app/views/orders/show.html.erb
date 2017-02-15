@@ -18,8 +18,11 @@
     </tr>
     <% @order.line_items.each do |item| %>
 
+
+
       <tr>
-        <td><%= item.product.images[0] %>IMAGE TO COME</td>
+        <td>
+          <%= cl_image_tag(item.product.images[0], :style => "height:150px") %> </td>
         <td><%= item.product.name %></td>
         <td><%= item.product.size %></td>
         <td><%= number_to_currency(item.product.cost) %></td>
