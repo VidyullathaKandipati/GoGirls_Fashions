@@ -8,13 +8,13 @@ img.nav-avatar {
 }
 
 
-.navbar-brand, .navbar-nav > li > a{
+.navbar-brand, .navbar-nav > li > a {
   line-height: 32px;
 
 }
 
 
-#bs-example-navbar-collapse-1{
+#bs-example-navbar-collapse-1 {
   border:1px solid #111;
 }
 
@@ -25,12 +25,12 @@ img.nav-avatar {
   color: white;
 }
 
-.navbar-default{
+.navbar-default {
   border-color: 1px solid #111;;
 
 }
 
-.filters{
+.filters {
   margin: 0 10px 15px;
   background: #fff;
   text-align: left;
@@ -39,9 +39,11 @@ img.nav-avatar {
   border-bottom: 1px solid black;
 }
 
-.box{
-
+.box {
   width: 100%;
   margin: 21px 0;
+}
 
+nav. box filters path {
+  text-align: center;
 }
