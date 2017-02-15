@@ -1,19 +1,33 @@
 
 
 <%=  render :partial => 'layouts/navbarInner' %>
-<h1>New Category</h1>
+
 <div class="row">
   <div class="col-md-1"></div>
-    <div class="col-md-4">
+    <div class="col-md-5">
+
+      <div class="row">
+
+
+      <div class="col-md-11">
+      <h1>New Category</h1>
       <%= form_for @category do |f| %>
         <div class="form-group">
-          <%= f.text_field :name, :class => "form-control", :placeholder => "Category Name", :required => true %>
-          <%= f.text_field :gender, :class => "form-control", :placeholder => "Category Gender", :required => true %>
+          <%= f.text_field :name, :class => "textfield-border form-control", :placeholder => "Category Name", :required => true %>
+        </div>
+          <div class="form-group">
+          <%= f.text_field :gender, :class => "textfield-border form-control", :placeholder => "Category Gender", :required => true %>
         </div>
         <%= submit_tag 'New Category', :class => 'btn btn-primary'%>
       <% end %>
+
     </div>
     <div class="col-md-1"></div>
+    </div>
+
+
+    </div>
+
   <div class="col-md-5">
     <%=  render :partial => 'categories/list' %>
   </div>
