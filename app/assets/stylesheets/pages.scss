@@ -17,6 +17,47 @@
   border-color: black;
 }
 
-.la{
+
+.image-container .overlay{
+  position: relative;
+  background:rgba(0,0,0,.75);
+  /*text-align:center;*/
+  /*opacity:0;*/
+  -webkit-transition: opacity .25s ease;
+}
+
+.image-container .image-container:hover .overlay {
+               opacity:1;}
+
+.image-container .overlay-title {
+  font-family:Helvetica;
+  font-weight:900;
+  color:rgba(215,2,64,.7);
+  font-size:36px;
+  width: 100%;
+  text-align: center;
+  line-height: 375px;
+}
+
+div.col-xs-12.col-md-4.image-container{
+  padding-top: 22px;
+}
+div.col-xs-12.col-md-4.image-container a{
+  padding-right: 5px;
+  z-index: 999999;
+}
+
+img.img-responsive{
+      width: 311px;
+}
+
+div.overlay{
+
+  color: black;
+}
+.image-container .overlay{
+  background: rgba(0, 0, 0, 0.1);
+}
+.la {
  justify-content: center;
 }
