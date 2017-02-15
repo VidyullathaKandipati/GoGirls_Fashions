@@ -33,34 +33,32 @@
     <li>
       <%= link_to "Cart", order_path(:id => @order.id), :class => "blackfont"%>
     </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-          <span class="blackfont"><%= "#{@current_user.name}" %></span>
+      <li class=" dropdown">
+        <a href="#" class="blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= "#{@current_user.name}" %>
           <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "Edit profile", edit_user_path(@current_user.id) %></li>
+        <ul class="dropdown-menu" >
+          <li ><%= link_to "Wishlist", wishlist_path, :id=>"drop" %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Logout", login_path, :method => 'delete' %></li>
+          <li><%= link_to "Edit profile", edit_user_path(@current_user.id), :id=>"drop" %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Logout", login_path, :method => 'delete', :id=>"drop" %></li>
         </ul>
       </li>
     <% end %>
 
     <% if @current_user.present? %>
     <% if @current_user.admin %>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-          <span class="blackfont">Admin</span>
-          <span class="caret"></span></a>
+        <li class=" dropdown">
+          <a href="#" class=" blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><%= link_to "Product", new_product_path %></li>
+          <li><%= link_to "Product", new_product_path, :id=>"drop" %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Category", new_category_path %></li>
+          <li><%= link_to "Category", new_category_path, :id=>"drop" %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Users", users_path, :id=>"drop" %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Orders", orders_path %></li>
+          <li><%= link_to "Orders", orders_path, :id=>"drop" %></li>
         </ul>
       </li>
 

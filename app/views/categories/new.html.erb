@@ -13,12 +13,19 @@
       <h1>New Category</h1>
       <%= form_for @category do |f| %>
         <div class="form-group">
-          <%= f.text_field :name, :class => "textfield-border form-control", :placeholder => "Category Name", :required => true %>
+          *<%= f.label :name %>
+          <%= f.text_field :name, :class => "textfield-border form-control", :required => true %>
         </div>
-          <div class="form-group">
-          <%= f.text_field :gender, :class => "textfield-border form-control", :placeholder => "Category Gender", :required => true %>
+
+
+        <div class="form-group">
+            *<%= f.label :gender %>
+            <%= f.select :gender, [['women'],['men'],['unisex']], :include_blank => false, :required => true %>
         </div>
-        <%= submit_tag 'New Category', :class => 'btnborder btn btn-primary btn-sm'%>
+
+        <%= submit_tag 'New Category', :class => 'btnborder btn btn-primary'%>
+
+
       <% end %>
 
     </div>
