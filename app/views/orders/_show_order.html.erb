@@ -1,0 +1,33 @@
+<table class="table">
+
+  <tr>
+    <td> </td>
+    <td>Product</td>
+    <td>Size</td>
+    <td>Unit Price</td>
+    <td>Quantity</td>
+    <td>Total Price</td>
+    <td> </td>
+  </tr>
+  <% @order.line_items.each do |item| %>
+
+    <tr>
+      <td><%= item.product.images[0] %>IMAGE TO COME</td>
+      <td><%= item.product.name %></td>
+      <td><%= item.product.size %></td>
+      <td><%= number_to_currency(item.product.cost) %></td>
+      <td><%= item.quantity %></td>
+      <td><%= number_to_currency(item.quantity * item.product.cost) %></td>
+      <td><%= link_to 'x', lineitem_destroy_path(item.id), :method => 'delete' %></td>
+
+    </tr>
+    <% end %>
+
+      <tr>
+        <td colspan="5" ></td>
+        <td colspan="2" class="totalCost"><%= number_to_currency(@order.total_cost) %></td>
+
+      </tr>
+
+
+</table>
