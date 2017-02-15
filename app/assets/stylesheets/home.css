@@ -187,6 +187,10 @@ body.home .slideshow__nav--nopad {
 	transition: border-color 0.3s;
 }
 
+.btn:hover{
+	background: black;
+}
+
 .btn:focus {
 	outline: none;
 }

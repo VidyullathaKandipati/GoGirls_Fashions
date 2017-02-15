@@ -13,13 +13,21 @@ u4 = User.create(name: 'Naomi', email: 'naomi@ga.com', password: 'chicken', admi
 
 Product.destroy_all
 #Female products
-p1= Product.create(name: 'Floral printed wrap dress', cost: 30, size: 's', color: '', gender: 'women', brand:'Vero Moda', info: "Floral printed wrap dress");
-p2= Product.create(name: 'Midi Skirt', cost: 75, size: 's', color: '', gender: 'women', brand:'Vero Moda', info: "Midi Skirt in Satin with Splices in Print");
+p1 = Product.create(name: 'Floral printed wrap dress', cost: 30, size: 's', color: '', gender: 'women', brand:'Vero Moda', info: "Floral printed wrap dress");
+p2 = Product.create(name: 'Midi Skirt', cost: 75, size: 's', color: '', gender: 'women', brand:'Vero Moda', info: "Midi Skirt in Satin with Splices in Print");
+p9 = Product.create(name: 'Pyjama Shirt Dress', cost: 69, size: 's', color: 'black', gender: 'women', brand:'Monki', info: "Pyjama Shirt Dress with white piping");
+p10 = Product.create(name: 'Wide Leg Culottes with Frill Hem', cost: 69, size: 's', color: 'black', gender: 'women', brand:'Neon Rose', info: "Smooth woven frabric, mid rise waist");
+p11 = Product.create(name: 'Metallic Pleated Midi Skirt', cost: 52, size: 's', color: 'silver', gender: 'women', brand:'Pimkie', info: "Semi-sheer fabric, high waist");
+p12 = Product.create(name: 'Floral embroidered Bomber Jacket', cost: 459, size: 'm', color: 'floral', gender: 'women', brand:'Needle and Thread', info: "Fully lined, zip fastening");
+
 
 #Male Products
 p3 = Product.create(name: 'T-Shirt', cost: 50, size: 'm', color: '', gender: 'men', brand:'Jack & Jones', info: "Geometric Print T-Shirt");
 p4 = Product.create(name: 'Blue jeans', cost: 157, size: 'm', color: 'blue', gender: 'men', brand:'Lee', info: "Low Slim Fit Stretch Blue Legacy Dark Wash Jeans");
-
+p5 = Product.create(name: 'Slim Chinos', cost: 40, size: 'l', color: 'black', gender: 'men', brand:'ASOS', info: "Stretch woven fabric, slim fit");
+p6 = Product.create(name: 'Cropped Pants', cost: 69, size: 's', color: 'Navy', gender: 'men', brand:'Only & Sons', info: "Slim fit, smooth woven fabric");
+p7 = Product.create(name: 'Revere Shirt', cost: 98, size: 'm', color: 'blue', gender: 'men', brand:'Reclaimed Vintage', info: "Romeo and Juliet inspired shirt");
+p8 = Product.create(name: 'California T-Shirt', cost: 40, size: 'm', color: '', gender: 'men', brand:'Adidas', info: "Adidas Originals 3 Stripe T-Shirt");
 # Image.destroy_all
 # #Female images
 # i1= Image.create(url:'http://images.asos-media.com/inv/media/4/8/2/9/7769284/navyprint/image1xl.jpg');
@@ -48,3 +56,11 @@ p1.categories << c2
 p2.categories << c4
 p3.categories << c6
 p4.categories << c1
+p5.categories << c1
+p6.categories << c1
+p7.categories << c6
+p8.categories << c6
+p9.categories << c2
+p10.categories << c1
+p11.categories << c4
+p12.categories << c3
