@@ -76,6 +76,10 @@
 
 Rails.application.routes.draw do
 
+  get 'chatbot/chat' => 'chatbot#chat'
+
+  get 'chatbot/show' => 'chatbot#show'
+
   root :to => 'pages#home'
   get '/shop/:gender' => 'pages#shop', :as => 'shop'
   get '/shop/:gender/:category' => 'pages#category', :as => 'products_category'
