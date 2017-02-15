@@ -85,3 +85,15 @@ input.btn.btn-primary{
 .blackfont:hover{
     color:black;
   }
+
+  .nav .open > a:focus {
+    color: black;
+  }
+
+  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    color:black;
+  }
+
+  #drop:hover{
+    color:black;
+  }
