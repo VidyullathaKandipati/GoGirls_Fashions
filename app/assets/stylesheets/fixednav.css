@@ -101,8 +101,19 @@ h3 {
 .navbar-inner .blackfont{
   color: #fff;
 }
-
-
 .wrapper{
   margin-top: 100px;
+}
+
+.dropdown-menu {
+  min-width: 230px;
+  padding: 0.5em;
+}
+
+#login-dp {
+  background-color: rgba(0,0,0,0);
+
+}
+#btn-login {
+  color: white;
 }
