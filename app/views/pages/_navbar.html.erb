@@ -1,8 +1,6 @@
 
-
-
-<nav class="box filters path" role="complementary">
-  <% @categories.each do |category| %>
-  <%= link_to category.name.upcase, products_category_path(:category => category.name), :class=>"btn btn-primary" %>
-  <% end %>
-</nav>
+    <nav class="la box filters path" role="complementary">
+      <% @categories.each do |category| %>
+      <%= link_to category.name.upcase, products_category_path(:category => category.name), :class=>"btn btn-primary" %>
+      <% end %>
+    </nav>

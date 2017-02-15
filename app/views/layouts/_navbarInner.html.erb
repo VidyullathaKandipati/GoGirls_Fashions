@@ -24,7 +24,18 @@
     <li><%= link_to "Sign in", login_path, :class => "blackfont" %></li>
     <% end %>
 
+
+
     <% if @current_user.present? %>
+
+
+    <li>
+      <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
+    </li>
+    <li>
+      <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
+    </li>
+
     <li>
       <%= link_to "Cart", order_path(:id => @order.id), :class => "blackfont"%>
     </li>
@@ -34,12 +45,36 @@
           <span class="blackfont"><%= "#{@current_user.name}" %></span>
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
+          <li><%= link_to "Wishlist", wishlist_path %></li>
+          <li role="separator" class="divider"></li>
           <li><%= link_to "Edit profile", edit_user_path(@current_user.id) %></li>
           <li role="separator" class="divider"></li>
           <li><%= link_to "Logout", login_path, :method => 'delete' %></li>
         </ul>
       </li>
     <% end %>
+
+    <% if @current_user.present? %>
+    <% if @current_user.admin %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+          <span class="blackfont">Admin</span>
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Product", new_product_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Category", new_category_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Orders", orders_path %></li>
+        </ul>
+      </li>
+
+    <% end %>
+    <% end %>
+
   </ul>
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->

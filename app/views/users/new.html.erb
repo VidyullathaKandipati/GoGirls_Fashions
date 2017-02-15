@@ -1,5 +1,6 @@
 <%=  render :partial => 'layouts/navbarInner' %>
-<h1>New user sign up</h1>
+<br>
+
 <% if @user.errors.any? %>
   <ol>
   <% @user.errors.full_messages.each do |msg| %>

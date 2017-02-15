@@ -1,0 +1,52 @@
+
+<div class="row">
+
+
+<div class="col-md-11">
+<%= form_for(@product, :html=>{:multipart=>true}) do |f| %>
+
+<div class="form-group">
+  *<%= f.label :name %>
+  <%= f.text_field :name, :autofocus=>true, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :cost %>
+  <%= f.number_field :cost, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :size %>
+  <%= f.text_field :size, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :color %>
+  <%= f.text_field :color, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :gender %>
+  <%= f.text_field :gender, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :brand %>
+  <%= f.text_field :brand, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :info %>
+  <%= f.text_field :info, :required => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+  *<%= f.label :images %>
+  <%= f.file_field :images, :multiple => true, :class=>"form-control textfield-border" %>
+</div>
+<div class="form-group">
+
+    *<%= f.label :category %>
+    <%= f.collection_select :category_ids, Category.all, :id, :name, :multiple => true, :prompt => 'Select'%>
+</div>
+<div class="button-center">
+  <%= f.submit 'Add Product', :class=>"btnborder btn btn-primary btn-sm" %>
+</div>
+<% end %>
+
+</div>
+<div class="col-md-1"></div>
+</div>
