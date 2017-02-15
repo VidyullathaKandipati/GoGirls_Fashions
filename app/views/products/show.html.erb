@@ -28,9 +28,6 @@
                                   :method=>"delete", :class=>"btnborder btn btn-primary "%>
           <% else %>
 
-            <%= link_to "Add Favourite", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
-                                  :method=>"post", :class=>"btnborder btn btn-primary " %>
-
             <%= link_to "Add to Wishlist", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
                                   :method=>"post", :class=>"btnborder btn btn-primary " %>
 
