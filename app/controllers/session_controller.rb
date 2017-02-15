@@ -7,6 +7,8 @@ class SessionController < ApplicationController
     #is there such user and does the password match
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
+      user.orders << @order if @order.present?
+      # @order.update :user_id => user.id if @order.present?
       redirect_to root_path
     else
       flash[:error] = "Invalid email or password. Signup if you are new user
