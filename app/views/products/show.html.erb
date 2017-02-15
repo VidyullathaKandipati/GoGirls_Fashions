@@ -18,14 +18,14 @@
         <% if flash[:msg].present? %>
           <p class="bg-danger"><%= flash[:msg] %></p>
         <% end %>
-        <%= button_to "Add to Cart", product_line_items_path(product_id: @product.id), :class=>"btn btn-primary btn-sm" %>
+        <%= link_to "Add to Cart", product_line_items_path(product_id: @product.id), :method=>"post", :class=>"btn btn-primary btn-sm" %>
       </div>
         <div class="button-center">
           <% if @current_user.already_likes?(@product) %>
-            <%= link_to "Remove Favourite", product_favourite_path(:product_id=>@product.id, :user_id=>@current_user.id),
-                                  :method=>"delete"%>
+            <%= link_to "Remove from Wishlist", product_favourite_path(:product_id=>@product.id, :user_id=>@current_user.id),
+                                  :method=>"delete", :class=>"btn btn-primary btn-sm"%>
           <% else %>
-            <%= link_to "Add Favourite", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
+            <%= link_to "Add to Wishlist", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
                                   :method=>"post", :class=>"btn btn-primary btn-sm" %>
           <% end %>
         </div>
