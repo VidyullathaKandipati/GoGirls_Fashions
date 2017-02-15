@@ -6,16 +6,14 @@
     <% product.each do |prod| %>
       <div class="col-xs-12 col-md-4 image-container" >
         <%= link_to product_path(:id => prod.id) do %>
-          <div class="overlay" style="display:relative; text-align:cetnter;">
+          <div class="overlay" style="position:relative; text-align:center;">
             <%= cl_image_tag(prod.images[0], :class => 'img-responsive', :style => "object-fit: cover; height:350px")  %>
-            <p><%= prod.info %> $<%= prod.cost %></p>
+            <p> $<%= prod.cost %></p>
             <p><%= prod.brand %> </p>
-        </div>
+          </div>
         <% end %>
       </div>
-
     <% end %>
   </div>
-
 <% end %>
 </div>
