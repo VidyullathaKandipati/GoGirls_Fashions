@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @products = Product.all
     @product = Product.new
   end
 
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
     end
     if @product.save
       flash[:create] = "Product created successfully"
-      redirect_to @product
+      redirect_to new_product_path
     else
       render :new
     end
@@ -47,7 +48,7 @@ class ProductsController < ApplicationController
 
     if @product.save
       flash[:create] = "Product updated successfully"
-      redirect_to @product
+      redirect_to new_product_path
     else
       render :edit
     end
@@ -56,7 +57,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_path, notice: 'Product is successfully destroyed.' }
+      format.html { redirect_to new_product_path, notice: 'Product is successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     #is there such user and does the password match
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to products_path
+      redirect_to root_path
     else
       flash[:error] = "Invalid email or password. Signup if you are new user
                        before making reservations."
@@ -18,6 +18,6 @@ class SessionController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:logout] = "Logged out successfully"
-    redirect_to products_path
+    redirect_to root_path
   end
 end
