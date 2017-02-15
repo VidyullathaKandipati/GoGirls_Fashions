@@ -402,9 +402,16 @@ body.home .slideshow__nav--nopad {
 	}
 }
 
-
-
 img.banner {
 	width: 100%;
   margin: -20px auto;
+}
+
+#price {
+	color: #6696c4;
+	font-size: 130%;
+}
+
+.green {
+	color: #6696c4;
 }

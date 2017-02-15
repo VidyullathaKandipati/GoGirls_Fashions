@@ -6,9 +6,11 @@
   <div class="row">
     <div class='col-md-6'>
       <h3><%= @product.name %></h3>
-      <h4><%= @product.brand %></h4>
-      <p><%= number_to_currency(@product.cost) %></p>
-      <p><%= @product.color %></p>
+      <br>
+      <p>Price : <span id="price"><%= number_to_currency(@product.cost)%></span></p>
+      <p>Designed by : <span class="green"><%= @product.brand %></span></p>
+      <p>Color : <span class="green"><%= @product.color %></span></p>
+      <br>
       <p><%= @product.info %></p>
       <% if @current_user.present? %>
       <div>
@@ -42,12 +44,10 @@
     </div>
   </div>
 
-
-
       <div>
-        <h4>Reviews</h4>
+        <h4><strong>Reviews</strong></h4>
         <% @product.reviews.each do |review| %>
-          <p>
+          <p><i class="fa fa-comment-o" aria-hidden="true"></i>
 
             <%= review.desc %>
           </p>
