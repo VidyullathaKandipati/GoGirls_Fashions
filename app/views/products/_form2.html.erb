@@ -38,11 +38,12 @@
   <%= f.file_field :images, :multiple => true, :class=>"form-control textfield-border" %>
 </div>
 <div class="form-group">
-    <%# f.label :category_id %>
-    <%# options_from_collection_for_select, Category.all, :category_id, :name, :include_blank => true %>
+
+    *<%= f.label :category %>
+    <%= f.collection_select :category_ids, Category.all, :id, :name, :multiple => true, :prompt => 'Select'%>
 </div>
 <div class="button-center">
-  <%= f.submit :class=>"btn btn-primary" %>
+  <%= f.submit 'Add Product', :class=>"btn btn-primary" %>
 </div>
 <% end %>
 

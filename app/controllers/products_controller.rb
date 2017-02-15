@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-  
+
   end
 
   def new
@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :cost, :size, :color, :gender, :brand, :info)
+    params.require(:product).permit(:name, :cost, :size, :color, :gender, :brand, :info, :category_ids)
   end
 
 end
