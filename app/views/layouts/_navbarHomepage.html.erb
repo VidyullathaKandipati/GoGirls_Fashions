@@ -20,6 +20,13 @@
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <% if !@current_user.present? %>
+    <li>
+      <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
+    </li>
+    <li>
+      <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
+    </li>
+
     <li><%= link_to "Join", new_user_path, :class => "blackfont" %></li>
     <!-- <li><%= link_to "Sign in", login_path, :class => "blackfont" %></li> -->
     <li class="dropdown">
