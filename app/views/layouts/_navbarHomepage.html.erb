@@ -51,10 +51,6 @@
 
     <% if @current_user.present? %>
 
-
-    <li>
-      <%= link_to "Cart", order_path(:id => @order.id), :class => "blackfont"%>
-    </li>
       <li class=" dropdown">
         <a href="#" class="blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <%= "#{@current_user.name}" %>
@@ -82,6 +78,10 @@
           <li role="separator" class="divider"></li>
           <li><%= link_to "Orders", orders_path, :id=>"drop" %></li>
         </ul>
+      </li>
+
+      <li >
+        <%= link_to order_path(:id => @order.id) do%><i id="cart-icon" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><% end %>
       </li>
 
     <% end %>
