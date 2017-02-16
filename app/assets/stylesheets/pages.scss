@@ -125,7 +125,8 @@ input.btn.btn-primary{
   a.dropdown_toggle:hover {
     color:black;
   }
-.blackfont:hover{
+
+  .blackfont:hover{
     color:black;
   }
 
@@ -154,4 +155,12 @@ input.btn.btn-primary{
 
 #homebtn:hover{
   background: none;
+}
+
+.btnblack:focus{
+  background-color: black;
+}
+
+.btnblack:hover{
+  color:white;
 }
