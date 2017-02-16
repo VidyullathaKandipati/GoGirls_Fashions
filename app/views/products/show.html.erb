@@ -33,11 +33,12 @@
 
           <% end %>
         </div>
+        <% end %>
     </div>
-    <div class='col-md-6'>
-      <% @product.images.each do |i| %>
-        <%= cl_image_tag i, :class=>"productListThumb"  %>
-      <% end %>
+
+      <div class='col-md-6'>
+        <% @product.images.each do |i| %>
+          <%= cl_image_tag i, :class=>"productListThumb"  %>
     </div>
   </div>
 
