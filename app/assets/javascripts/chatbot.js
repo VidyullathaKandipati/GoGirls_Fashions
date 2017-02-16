@@ -1,5 +1,6 @@
-if ($('body.chatbot.chat').length === 0)
- {
+// if ($('body.chatbot.chat').length === 0)
+ // {
+ $(document).ready(function(){
 
    //Creating the window
    //Event handler to take action on the user input for chat
@@ -25,6 +26,7 @@ if ($('body.chatbot.chat').length === 0)
         });
 
        //Appending the question and clear the input field
+      //  $('.chat-header').hide();
        var $question = $('<div/>');
        $question.text(inputText);
        $question.addClass('question');
@@ -41,4 +43,19 @@ if ($('body.chatbot.chat').length === 0)
      return false;
    }
 
- }
+   $(".hideChat").click( hideChatWindow);
+
+   function hideChatWindow() {
+     $('.chat-window').hide();
+     $('.chat-input').hide();
+     $('.showChat').show();
+   }
+
+   $(".showChat").click( showChatWindow );
+   function showChatWindow() {
+     $('.chat-window').show();
+     $('.chat-input').show();
+     $('.showChat').hide();
+   }
+ // }
+ });
