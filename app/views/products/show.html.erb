@@ -13,55 +13,55 @@
       <br>
       <p><%= @product.info %></p>
       <% if @current_user.present? %>
-      <div>
-        <% if flash[:error].present? %>
-          <p class="bg-danger"><%= flash[:error] %></p>
-        <% end %>
-        <% if flash[:msg].present? %>
-          <p class="bg-danger"><%= flash[:msg] %></p>
-        <% end %>
-        <%= link_to "Add to Cart", product_line_items_path(product_id: @product.id), :method=>"post", :class=>"btnborder btn btn-primary" %>
-      </div>
+        <div>
+          <% if flash[:error].present? %>
+            <p class="bg-danger"><%= flash[:error] %></p>
+          <% end %>
+          <% if flash[:msg].present? %>
+            <p class="bg-danger"><%= flash[:msg] %></p>
+          <% end %>
+          <%= link_to "Add to Cart", product_line_items_path(product_id: @product.id), :method=>"post", :class=>"btnblack btnborder btn btn-primary" %>
+        </div>
         <div class="button-center">
           <% if @current_user.already_likes?(@product) %>
             <%= link_to "Remove from Wishlist", product_favourite_path(:product_id=>@product.id, :user_id=>@current_user.id),
-                                  :method=>"delete", :class=>"btnborder btn btn-primary "%>
+                                  :method=>"delete", :class=>"btnblack btnborder btn btn-primary "%>
           <% else %>
 
             <%= link_to "Add to Wishlist", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
-                                  :method=>"post", :class=>"btnborder btn btn-primary " %>
+                                  :method=>"post", :class=>"btnblack btnborder btn btn-primary " %>
 
           <% end %>
         </div>
+        <% end %>
     </div>
+
     <div class='col-md-6'>
-      <% @product.images.each do |i| %>
-        <%= cl_image_tag i, :class=>"productListThumb"  %>
-      <% end %>
+        <% @product.images.each do |i| %>
+          <%= cl_image_tag i, :class=>"productListThumb"  %>
+        <% end %>
     </div>
   </div>
 
-      <div>
-        <h4><strong>Reviews</strong></h4>
-
-        <%= form_for([@product, @product.reviews.build]) do |f| %>
+  <div>
+    <h4><strong>Reviews</strong></h4>
+    <% if @current_user.present? %>
+      <%= form_for([@product, @product.reviews.build]) do |f| %>
         <%= hidden_field_tag :user_id, @current_user.id %>
         <div class="form-groupshow">
           <% if flash[:review_error].present? %>
             <p class="bg-danger"><%= flash[:review_error] %></p>
           <% end %>
           <%= f.text_area :desc, :class=>"form-control textfield-border"  %>
-          <%= f.submit 'Add Review', :class=>"btnshowborder btn btn-primaryshow" %>
+          <%= f.submit 'Add Review', :class=>"btnblack btnshowborder btn btn-primaryshow" %>
         </div>
-        <% @product.reviews.each do |review| %>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i>
-            <%= review.desc %>
-          </p>
-        <% end %>
-        <% end %>
-      </div>
+      <% end %>
     <% end %>
+    <% @product.reviews.each do |review| %>
+      <p><i class="fa fa-comment-o" aria-hidden="true"></i>
+        <%= review.desc %>
+      </p>
+    <% end %>
+  </div>
 
   </div>
-  </div>
-</div>

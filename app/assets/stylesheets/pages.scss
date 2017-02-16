@@ -125,7 +125,8 @@ input.btn.btn-primary{
   a.dropdown_toggle:hover {
     color:black;
   }
-.blackfont:hover{
+
+  .blackfont:hover{
     color:black;
   }
 
@@ -150,5 +151,24 @@ input.btn.btn-primary{
 //Moving home page image up
 .homepage-top-margin{
   margin-top: -2em;
+}
 
+#homebtn:hover{
+  background: none;
+}
+
+.btnblack:focus{
+  background-color: black;
+}
+
+.btnblack:active{
+  background-color: black;
+}
+
+.btnblack:active:hover{
+  background-color: black;
+}
+
+.btnblack:hover{
+  color:white;
 }

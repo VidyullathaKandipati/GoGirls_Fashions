@@ -29,11 +29,14 @@
 
 <% unless current_page?(root_path) %>
 <div class="chat-window">
-  <h1>Need help???</h1>
+  <h1 class="chat-header">Need help???<span class="hideChat">hide</span></h1>
   <div class="chat-history"></div>
 </div>
 <div class="chat-input">
   <%= render :partial => "chatbot/chat" %>
+</div>
+<div class="showChat">
+  <i class="fa fa-comment-o" aria-hidden="true"></i> Need help???
 </div>
 <% end %>
 

@@ -21,22 +21,50 @@
   <ul class="nav navbar-nav navbar-right">
 
     <% if !@current_user.present? %>
-    <li><%= link_to "Join", new_user_path, :class => "blackfont" %></li>
-    <li><%= link_to "Sign in", login_path, :class => "blackfont" %></li>
-    <% end %>
-
-
-
-    <% if @current_user.present? %>
-
-
     <li>
       <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
     </li>
     <li>
       <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
     </li>
+    <li><%= link_to "Join", new_user_path, :class => "blackfont" %></li>
 
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle blackfont" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+      <ul id="login-window" class="dropdown-menu">
+      <li>
+        <div class="row">
+          <div class="col-md-12">
+            <%= form_tag login_path, :class => 'form', :id => 'login-nav' do %>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+              </div>
+              <div class="form-group">
+                 <label class="sr-only" for="exampleInputPassword2">Password</label>
+                 <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+              </div>
+              <div class="form-group">
+                 <button type="submit" class="btn btn-primary btnborder btn-block">Sign in</button>
+              </div>
+            <% end %>
+          </div>
+         </div>
+        </li>
+      </ul>
+    </li>
+
+    <% end %>
+
+
+
+    <% if @current_user.present? %>
+      <li>
+        <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
+      </li>
+      <li>
+        <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
+      </li>
       <li class=" dropdown">
         <a href="#" class="blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <%= "#{@current_user.name}" %>
