@@ -91,7 +91,10 @@ div.overlay {
 }
 
 
-input.btn.btn-primaryshow {
+
+
+input.btn.btn-primaryshow{
+  justify-content: center;
   width: 153px;
   top: -57px;
   left: 384px;
@@ -143,8 +146,6 @@ input.btn.btn-primary{
     height: auto;
     width: 352px;
   }
-
-
 
 //Moving home page image up
 .homepage-top-margin{
