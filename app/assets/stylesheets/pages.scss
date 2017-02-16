@@ -48,18 +48,38 @@ div.col-xs-12.col-md-4.image-container a{
   z-index: 999999;
 }
 
+.image-box {
+  max-width: 302px;
+  max-height: 404px;
+  overflow: hidden;
+}
+
 img.img-responsive{
-      width: 311px;
+  width: 302px;
+  max-width: 302px;
+  height: 453px;
 
+  -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+     -ms-transition: all 1s ease;
+         transition: all 1s ease;
 }
 
-div.overlay{
+.image-container:hover img.img-responsive {
+  width: 319px;
+  max-width: 313px;
+  height: 480px;
+}
 
+
+div.overlay {
   color: black;
+  width: 312px;
 }
+
 .image-container .overlay{
   background: rgba(0, 0, 0, 0.03);
-  padding: 20px 1px 0 26px;
+  padding: 26px;
 }
 .la {
  justify-content: center;
