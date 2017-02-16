@@ -22,7 +22,7 @@ class ChargesController < ApplicationController
       :description => 'Fashion brand customer',
       :currency    => 'aud'
     )
-
+    UserMailer.payment_success(@order).deliver_now
 
 
   redirect_to order_charges_path
@@ -50,6 +50,8 @@ def index
   @order = Order.find params[:order_id]
   @order.status = true
   @order.save
+  UserMailer.payment_success(@order).deliver_now
+  
   session[:order_id] = nil
   redirect_to thanks_path
 end

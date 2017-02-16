@@ -1,0 +1,16 @@
+Thank you for your Order!
+
+Payment was successful for order #<%= "#{@order.id}" %>
+
+Your Order:
+<% @order.line_items.each do |item| %>
+
+  Product: <%= item.product.name %>
+  Size: <%= item.product.size %>
+  Unit Price: <%= number_to_currency(item.product.cost) %>
+  Quantity: <%= item.quantity %>
+  Total Price: <%= number_to_currency(@order.total_cost) %>
+
+<% end %>
+
+The above items will be on their way to you soon.
