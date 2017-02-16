@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
 .productListDiv{
   display: inline-block;
   width: 300px;
@@ -86,10 +91,13 @@ div.overlay {
 }
 
 
+
+
 input.btn.btn-primaryshow{
   justify-content: center;
   width: 153px;
-
+  top: -57px;
+  left: 384px;
 }
 
 input.btn.btn-primary{
