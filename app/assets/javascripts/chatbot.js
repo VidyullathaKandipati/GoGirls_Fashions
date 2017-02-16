@@ -40,6 +40,12 @@
        $(".chat-history").append($response);
      });
 
+
+    var $div = $('.chat-window');
+    $div.animate({
+      scrollTop: $div[0].scrollHeight
+    }, 500);
+
      return false;
    }
 
@@ -48,6 +54,7 @@
    function hideChatWindow() {
      $('.chat-window').hide();
      $('.chat-input').hide();
+     $('.chat-header').hide();
      $('.showChat').show();
    }
 
@@ -55,6 +62,7 @@
    function showChatWindow() {
      $('.chat-window').show();
      $('.chat-input').show();
+     $('.chat-header').show();
      $('.showChat').hide();
    }
  // }
