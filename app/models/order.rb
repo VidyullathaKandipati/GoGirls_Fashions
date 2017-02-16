@@ -11,6 +11,7 @@
 
 class Order < ActiveRecord::Base
   belongs_to :user
+  # if delete an order it will delete the line items asscoiated with it from the db
   has_many :line_items, dependent: :destroy
 
   def add_product(product_id)
