@@ -8,7 +8,7 @@
   <div class="form-wrapper">
 
     <%= form_tag order_charges_path, method: 'post', id: 'payment-form' do %>
-      <span class="payment-errors"></span>
+      <span class="payment-errors" ></span>
 
       <div class="form-group ">
           <label for="number">CARD NUMBER</label>
@@ -37,8 +37,7 @@
 
       </div>
 
-
-      <button type="submit" class= "btnborder btn ">Submit Payment</button>
+      <button type="submit" id= "payment-btn" class= "btnborder btn btn-primary btn-lg btn-block">Submit Payment</button>
     <% end %>
   </div>
 </div>

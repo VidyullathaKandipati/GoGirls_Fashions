@@ -9,7 +9,7 @@
 
 .payment-wrapper{
   border: 1px solid #ccc;
-  width: 30%;
+  width: 30em;
   border-radius: 5px;
   padding: 0;
   margin-top: 10em;
@@ -23,6 +23,32 @@
 }
 
 .form-wrapper{
-  padding: 1em;
+  padding: 1.5em 1.5em 0.4em 1.5em;
   font-size: 0.9em;
+}
+
+#payment-btn {
+  color: white;
+  background-color: #222;
+  border-color: black;
+  border: 1px solid #aaa;
+  margin-top: 1em;
+}
+
+#payment-btn:hover{
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+
+.payment-errors{
+  background-color: #f2dede;
+border-color: #ebcccc;
+color: #a94442;
+
+}
+
+.thanks-container{
+  padding: 2em;
+  text-align: center;
 }
