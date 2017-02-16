@@ -15,18 +15,24 @@
   padding: 1em;
   font-size: 12px;
   border: 2px solid black;
+  display: none;
 }
 .chat-input{
   position: fixed;
   bottom: 10px;
   right: 10px;
   width: 300px;
+  display: none;
 }
 .showChat{
   position: fixed;
-  bottom: 10px;
-  right: 10px;
-  display: none;
+  bottom: 20px;
+  right: 30px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 1em;
+  // display: none;
 }
 .question{
   margin: 20px auto;
