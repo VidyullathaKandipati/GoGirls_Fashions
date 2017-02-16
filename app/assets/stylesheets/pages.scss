@@ -68,12 +68,14 @@ div.overlay{
 
 input.btn.btn-primary{
   justify-content: center;
-  margin: 11% 50% 0 28%;
   width: 153px;
+  left: 400px;
+  top: -58px;
 }
 
 .btnborder{
-        border: 1px solid #6b6b6b;
+  border: 1px solid #6b6b6b;
+  top: 40px;
   }
 
 
@@ -98,3 +100,11 @@ input.btn.btn-primary{
   #drop:hover{
     color:black;
   }
+
+  textarea.form-control{
+    height: auto;
+    width: 352px;
+  }
+.form-group {
+    margin-bottom: -46px;
+}

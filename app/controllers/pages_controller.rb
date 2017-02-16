@@ -10,7 +10,6 @@ class PagesController < ApplicationController
   def category
     @categories = Category.where({ gender: [params[:gender], "unisex"]})
     @products = Product.joins(:categories).where('products.gender = ? and categories.name = ?', params[:gender], params[:category])
-    render "pages/shop"
   end
 
 end
