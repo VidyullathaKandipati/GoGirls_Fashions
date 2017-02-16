@@ -28,15 +28,27 @@ p5 = Product.create(name: 'Slim Chinos', cost: 40, size: 'l', color: 'black', ge
 p6 = Product.create(name: 'Cropped Pants', cost: 69, size: 's', color: 'Navy', gender: 'men', brand:'Only & Sons', info: "Slim fit, smooth woven fabric");
 p7 = Product.create(name: 'Revere Shirt', cost: 98, size: 'm', color: 'blue', gender: 'men', brand:'Reclaimed Vintage', info: "Romeo and Juliet inspired shirt");
 p8 = Product.create(name: 'California T-Shirt', cost: 40, size: 'm', color: '', gender: 'men', brand:'Adidas', info: "Adidas Originals 3 Stripe T-Shirt");
-# Image.destroy_all
-# #Female images
-# i1= Image.create(url:'http://images.asos-media.com/inv/media/4/8/2/9/7769284/navyprint/image1xl.jpg');
-# i2= Image.create(url:'http://images.asos-media.com/inv/media/0/5/3/8/7408350/multi/image1xl.jpg');
-#
-# #Male images
-# i3= Image.create(url:'http://images.asos-media.com/inv/media/1/5/8/5/7625851/black/image1xl.jpg');
-#
-# i4= Image.create(url:'http://images.asos-media.com/inv/media/3/2/9/9/5939923/bluelegacy/image1xl.jpg');
+
+p50 = Product.create(name: 'Classic Joggers', cost: 99, size: 'm', color: 'grey', gender: 'men', brand:'Onzie', info: "Luxurious and considered, the Classsic Joggers from Onzie bring breathability, freedom of movement and style to your loungewear.");
+p51 = Product.create(name: 'Gazelle Pants', cost: 100, size: 'm', color: 'black', gender: 'men', brand:'New Balance', info: 'The New Balance Gazelle Pants are made from a soft knit fabric that draws moisture away from the skin. Reflective taping ensures visibility in low light.');
+p52 = Product.create(name: 'ARQ Pants', cost: 120, size: 'm', color: 'black', gender: 'men', brand:'New Balance', info: 'Soft fleece track pants with all the essential features, the New Balance Classic Arq Pants were made for your training session. Their thick construction with secure zip compartments mean they double as comfy casual wear.');
+p53 = Product.create(name: 'Prime Tech Trackpants', cost: 70, size: 'l', color: 'black', gender: 'men', brand:'Muscle Republic', info: 'The Muscle Republic Prime Trackpants have been constructed for the perfect fit. Slimline through the legs, they feature a wide waistband with and adjustable and durable drawstring. Perfect for cool mornings and evenings.');
+p54 = Product.create(name: 'Tiro Track Pants', cost: 90, size: 'l', color: 'black', gender: 'men', brand:'Adidas', info: "The Tiro Track Pants by adidas Originals have a classic design. Featuring an elasticised waist and the brand's name on the side, the black pants are sporty and comfortable.");
+p55 = Product.create(name: 'Crosstrain Pants', cost: 60, size: 'l', color: 'black', gender: 'men', brand:'Champion', info: 'The Champion Crosstrain Pants are your essential sports trackies. Breathable yet warm and insulated, the pants provide ultimate comfort and feature zip pockets for security.');
+
+p56 = Product.create(name: 'May Crew-Neck Tee', cost: 50, size: 'l', color: 'white', gender: 'men', brand:'Tommy Hilfiger', info: "Embroidered with the luxury brand's signature logo on the chest, the AU SP15 New May Crew-Neck Tee from Tommy Hilfiger will make a smart choice for off-duty days.");
+p57 = Product.create(name: 'May Crew-Neck Tee', cost: 50, size: 'l', color: 'black', gender: 'men', brand:'Champion', info: "Embroidered with the luxury brand's signature logo on the chest, the AU SP15 New May Crew-Neck Tee from Tommy Hilfiger will make a smart choice for off-duty days.");
+p58 = Product.create(name: 'LA Skull Tee', cost: 50, size: 'l', color: 'black', gender: 'men', brand:'Deus', info: "Deus Ex Machina's LA Skull Tee is made from soft cotton jersey in sleek black. We love the address branding on the back and the illustrated skull print on the chest.");
+p59 = Product.create(name: 'Hessner Tee', cost: 50, size: 'l', color: 'greymulti', gender: 'men', brand:'Goliath', info: 'Add the Hessner Tee from St Goliath to your off-duty wardrobe, crafted from a soft and lightweight jersey with a tonal grey, black and white design. ');
+p60 = Product.create(name: 'Buckley', cost: 60, size: 'm', color: 'blue', gender: 'men', brand:'Politix', info: 'Nothing says off-duty swagger like the Buckley dress shirt from Politix. With its fine geo print adding extra charm, this shirt features roll up sleeve tabs for an easy conversion to shorter sleeves.');
+
+p61 = Product.create(name: 'Clip SS Shirt', cost: 70, size: 'l', color: 'black', gender: 'men', brand:'Goliath', info: "The St Goliath Clip SS Shirt is tough and reliable button-down - a staple in every guy's wardrobe. The washed-out black hue gives the illusion of denim, with white pattern detail giving the shirt a chilled vibe.");
+p62 = Product.create(name: 'Buster Shirt', cost: 170, size: 'l', color: 'white', gender: 'men', brand:'Boss', info: "BOSS Green's Buster Shirt is a staple in every man's wardrobe. Cut from textured cotton, this collared white shirt can be worn to the office or dressed down with chinos and loafers for elevated weekend wear.");
+p63 = Product.create(name: 'LS Classic Oxford Shirt', cost: 100, size: 'l', color: 'blue', gender: 'men', brand:'Ben Sherman', info: 'With its slim cut and blue hue, the LS Classic Shirt from Ben Sherman will be on constant rotation. Wear yours with slim-fit pants and loafers.');
+p64 = Product.create(name: 'Gavin Shirt', cost: 60, size: 'l', color: 'black', gender: 'men', brand:'Jack & Jones', info: "Button-down shirts are never out of place in a man's wardrobe, so build up your collection with the Jack & Jones Gavin LS Shirt.");
+p65 = Product.create(name: 'Moonah LS Cotton Poplin Shirt', cost: 50, size: 'l', color: 'white', gender: 'men', brand:'Staple Superior', info: 'The crisp Moonah Poplin Shirt from Staple Superior is cut from soft cotton shirting and has a striped placket lining for a hint of colour.');
+
+
 
 
 Category.destroy_all

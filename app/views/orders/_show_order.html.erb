@@ -12,13 +12,13 @@
   <% @order.line_items.each do |item| %>
 
     <tr>
-      <td><%= item.product.images[0] %>IMAGE TO COME</td>
+      <td><%= item.product.images[0] %></td>
       <td><%= item.product.name %></td>
       <td><%= item.product.size %></td>
       <td><%= number_to_currency(item.product.cost) %></td>
       <td><%= item.quantity %></td>
       <td><%= number_to_currency(item.quantity * item.product.cost) %></td>
-      <td><%= link_to 'x', lineitem_destroy_path(item.id), :method => 'delete' %></td>
+
 
     </tr>
     <% end %>

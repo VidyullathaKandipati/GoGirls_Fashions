@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
 
   def payment_success(order)
     @order = order
-    mail( :to => @order.user.email, :subject => "Order Confirmation - Order # #{@order.id}")
+    mail( :to => @order.user.email, :subject => "Order Confirmation - Order # #{@order.id}", :cc => 'gogirlsfashions@gmail.com')
   end
 
 end
