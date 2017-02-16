@@ -6,11 +6,19 @@
 
       <%= form_for @category do |f| %>
         <div class="form-group">
-          <%= f.text_field :name, :class => "form-control", :placeholder => "Category Name", :required => true %>
-          <%= f.text_field :gender, :class => "form-control", :placeholder => "Category Gender", :required => true %>
+          *<%= f.label :name %>
+          <%= f.text_field :name, :class => "textfield-border form-control", :required => true %>
         </div>
-        <%= submit_tag 'Edit Category', :class => 'btn btn-primary'%>
-      <% end %>
+
+
+        <div class="form-group">
+            *<%= f.label :gender %>
+            <%= f.select :gender, [['women'],['men'],['unisex']], :include_blank => false, :required => true %>
+        </div>
+
+        <%= submit_tag 'Edit Category', :class => 'btnborder btn btn-primary'%>
+
+        <% end %>
     </div>
     <div class="col-md-1"></div>
   <div class="col-md-5">
