@@ -13,10 +13,10 @@ function switchInto() {
   // update `scrolledPast` bool
   scrolledPast = true;
   // add/remove CSS classes
-  navBar.removeClass(data.startcolor);
-  navBar.removeClass(data.startsize);
-  navBar.addClass(data.intocolor);
-  navBar.addClass(data.intosize);
+  navBar.removeClass('data-startcolor');
+  navBar.removeClass('data-startsize');
+  navBar.addClass('data-intocolor');
+  navBar.addClass('data-intosize');
   console.log('into transition triggered!');
 };
 
@@ -25,10 +25,10 @@ function switchStart() {
   // update `scrolledPast` bool
   scrolledPast = false;
   // add/remove CSS classes
-  navBar.addClass(data.startcolor);
-  navBar.addClass(data.startsize);
-  navBar.removeClass(data.intocolor);
-  navBar.removeClass(data.intosize);
+  navBar.addClass('data-startcolor');
+  navBar.addClass('data-startsize');
+  navBar.removeClass('data-intocolor');
+  navBar.removeClass('data-intosize');
   console.log('start transition triggered!');
 }
 

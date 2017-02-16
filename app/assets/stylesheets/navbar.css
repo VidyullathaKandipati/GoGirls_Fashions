@@ -60,3 +60,7 @@ img.nav-avatar {
 nav.dropdown:hover{
   color:black;
 }
+
+#cart-icon{
+  color: white;
+}

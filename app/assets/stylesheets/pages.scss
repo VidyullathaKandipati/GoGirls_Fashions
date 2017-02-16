@@ -66,14 +66,28 @@ div.overlay{
 }
 
 
+input.btn.btn-primaryshow{
+  justify-content: center;
+  width: 153px;
+
+}
+
 input.btn.btn-primary{
   justify-content: center;
-  margin: 11% 50% 0 28%;
   width: 153px;
 }
 
 .btnborder{
-        border: 1px solid #6b6b6b;
+  border: 1px solid #6b6b6b;
+  }
+
+.btnshowborder{
+  border: 1px solid #6b6b6b;
+  top: 40px;
+  }
+
+  .form-groupshow {
+      margin-bottom: -57px;
   }
 
 
@@ -98,3 +112,17 @@ input.btn.btn-primary{
   #drop:hover{
     color:black;
   }
+
+
+  textarea.form-control{
+    height: auto;
+    width: 352px;
+  }
+
+
+
+//Moving home page image up
+.homepage-top-margin{
+  margin-top: -2em;
+
+}
