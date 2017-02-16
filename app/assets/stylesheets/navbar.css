@@ -1,3 +1,8 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
 img.nav-avatar {
   width: 30px;
   height:30px;
@@ -17,9 +22,7 @@ img.nav-avatar {
 
 .navbar-brand, .navbar-nav > li > a {
   line-height: 32px;
-
 }
-
 
 #bs-example-navbar-collapse-1 {
   border:1px solid #111;
@@ -63,4 +66,12 @@ nav.dropdown:hover{
 
 #cart-icon{
   color: white;
+}
+
+#btnborder:focus{
+  background-color: black;
+}
+
+#btnblack:focus {
+    background-color: black;
 }

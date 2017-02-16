@@ -27,6 +27,16 @@
   <%= yield %>
 </div>
 
+<% unless current_page?(root_path) %>
+<div class="chat-window">
+  <h1>Need help???</h1>
+  <div class="chat-history"></div>
+</div>
+<div class="chat-input">
+  <%= render :partial => "chatbot/chat" %>
+</div>
+<% end %>
+
 
 </body>
 </html>

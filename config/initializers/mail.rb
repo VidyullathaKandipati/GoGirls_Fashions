@@ -1,8 +1,8 @@
 ActionMailer::Base.raise_delivery_errors = true
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => Rails.application.secrets.sendgrid_username,
-  :password => Rails.application.secrets.sendgrid_password,
+  :user_name => 'apikey',
+  :password => Rails.application.secrets.sendgrid_apikey,
   :domain => 'heroku.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
