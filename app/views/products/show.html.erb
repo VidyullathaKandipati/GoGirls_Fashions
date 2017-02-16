@@ -46,12 +46,12 @@
 
         <%= form_for([@product, @product.reviews.build]) do |f| %>
         <%= hidden_field_tag :user_id, @current_user.id %>
-        <div class="form-group">
+        <div class="form-groupshow">
           <% if flash[:review_error].present? %>
             <p class="bg-danger"><%= flash[:review_error] %></p>
           <% end %>
           <%= f.text_area :desc, :class=>"form-control textfield-border"  %>
-          <%= f.submit 'Add Review', :class=>"btnborder btn btn-primary" %>
+          <%= f.submit 'Add Review', :class=>"btnshowborder btn btn-primaryshow" %>
         </div>
         <% @product.reviews.each do |review| %>
           <p><i class="fa fa-comment-o" aria-hidden="true"></i>

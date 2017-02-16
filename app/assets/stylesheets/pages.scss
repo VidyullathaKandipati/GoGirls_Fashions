@@ -66,16 +66,28 @@ div.overlay{
 }
 
 
+input.btn.btn-primaryshow{
+  justify-content: center;
+  width: 153px;
+
+}
+
 input.btn.btn-primary{
   justify-content: center;
   width: 153px;
-  left: 400px;
-  top: -58px;
 }
 
 .btnborder{
   border: 1px solid #6b6b6b;
+  }
+
+.btnshowborder{
+  border: 1px solid #6b6b6b;
   top: 40px;
+  }
+
+  .form-groupshow {
+      margin-bottom: -57px;
   }
 
 
@@ -105,9 +117,6 @@ input.btn.btn-primary{
   textarea.form-control{
     height: auto;
     width: 352px;
-  }
-.form-group {
-    margin-bottom: -46px;
   }
 
 //Moving home page image up

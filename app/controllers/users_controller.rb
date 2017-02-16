@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, :only => [:edit, :update, :show]
 
   def wishlist
-    
+
   end
 
   def index
@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:create] = "Account created successfully"
+      UserMailer.welcome(@user).deliver_now
       redirect_to root_path
     else
       render :new
