@@ -21,7 +21,7 @@
      }).done(function (response) {
        //oooh, thats a long way to get the response, but thats how api.ai works ... :|
        var message = response.result.fulfillment.messages[0].speech;
-       var parsedResponse = message.replace(/http\S+/, function (url) {
+       var parsedResponse = message.replace(/http\S+/g, function (url) {
           return '<a href=' + url + '>' + url + '</a>';
         });
 
@@ -38,13 +38,13 @@
        $response.html(parsedResponse);
        $response.addClass('response');
        $(".chat-history").append($response);
+
+       var $div = $('.chat-window');
+       $div.animate({
+         scrollTop: $div[0].scrollHeight
+       }, 500);
+
      });
-
-
-    var $div = $('.chat-window');
-    $div.animate({
-      scrollTop: $div[0].scrollHeight
-    }, 500);
 
      return false;
    }
