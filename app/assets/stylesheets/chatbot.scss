@@ -1,3 +1,33 @@
 // Place all the styles related to the chatbot controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.chat-window{
+  position: fixed;
+  bottom: 45px;
+  right: 10px;
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  overflow-y: scroll;
+  padding: 1em;
+  font-size: 12px;
+}
+.chat-input{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+}
+.question{
+  background-color: grey;
+}
+.response{
+  // background-color: green;
+}
+h1{
+  // background-color: white;
+  // color: black;
+  margin-top: 0px;
+}
