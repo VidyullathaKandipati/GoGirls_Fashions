@@ -75,3 +75,11 @@ nav.dropdown:hover{
 #btnblack:focus {
     background-color: black;
 }
+
+#btn-login:focus{
+  background-color: black;
+}
+
+#btn-login:focus:active{
+  background-color: black;
+}
