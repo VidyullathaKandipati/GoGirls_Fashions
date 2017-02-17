@@ -4,38 +4,26 @@
 
 <div class="row">
   <div class="col-md-1"></div>
-    <div class="col-md-5">
-
-      <div class="row">
-
-
+  <div class="col-md-5">
+    <div class="row">
       <div class="col-md-11">
-      <h1>New Category</h1>
-      <br>
-      <%= form_for @category do |f| %>
-        <div class="form-group">
-          *<%= f.label :name %>
-          <%= f.text_field :name, :class => "textfield-border form-control", :required => true %>
-        </div>
-
-
-        <div class="form-group">
-            *<%= f.label :gender %>
-            <%= f.select :gender, [['women'],['men'],['unisex']], :include_blank => false, :required => true %>
-        </div>
-
-        <%= submit_tag 'New Category', :class => 'btnborder btn btn-primary', :id =>'btnblack'%>
-
-
-      <% end %>
-
+        <h1>New Category</h1>
+        <br>
+        <%= form_for @category do |f| %>
+          <div class="form-group">
+            *<%= f.label :name %>
+            <%= f.text_field :name, :class => "textfield-border form-control", :required => true %>
+          </div>
+          <div class="form-group">
+              *<%= f.label :gender %>
+              <%= f.select :gender, [['women'],['men'],['unisex']], :include_blank => false, :required => true %>
+          </div>
+          <%= submit_tag 'New Category', :class => 'btnborder btn btn-primary', :id =>'btnblack'%>
+        <% end %>
+      </div>
+      <div class="col-md-1"></div>
     </div>
-    <div class="col-md-1"></div>
-    </div>
-
-
-    </div>
-
+  </div>
   <div class="col-md-5">
     <%=  render :partial => 'categories/list' %>
   </div>

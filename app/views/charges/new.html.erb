@@ -2,41 +2,30 @@
 <%=  render :partial => 'layouts/navbarInner' %>
 <div class="container payment-wrapper">
 
-
-<h4 class="payment-header lead">Payment details</h4>
-
+  <h4 class="payment-header lead">Payment details</h4>
   <div class="form-wrapper">
-
     <%= form_tag order_charges_path, method: 'post', id: 'payment-form' do %>
       <span class="payment-errors" ></span>
-
       <div class="form-group ">
           <label for="number">CARD NUMBER</label>
           <input type="text"  id="number" data-stripe="number" class="form-control"/>
       </div>
-
       <div class="form-group">
-
-          <label for="cvc">CVC</label>
-          <input type="text" id="cvc" data-stripe="cvc" class="form-control"/>
-
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" data-stripe="cvc" class="form-control"/>
       </div>
-
       <div class="form-group">
-
-          <label for="exp">EXPIRATION</label>
-          <div class="row">
-            <div class="col-xs-4">
-              <input type="text" size="3" id= "expiration" data-stripe="exp-month" placeholder="MM" class="form-control"/>
-            </div>
-            <div class="col-xs-1">/</div>
-            <div class="col-xs-4">
-              <input type="text" size="5" data-stripe="exp-year" placeholder="YYYY" class="form-control"/>
-            </div>
-</div>
-
+        <label for="exp">EXPIRATION</label>
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="text" size="3" id= "expiration" data-stripe="exp-month" placeholder="MM" class="form-control"/>
+          </div>
+          <div class="col-xs-1">/</div>
+          <div class="col-xs-4">
+            <input type="text" size="5" data-stripe="exp-year" placeholder="YYYY" class="form-control"/>
+          </div>
+        </div>
       </div>
-
       <button type="submit" id= "payment-btn" class= "btnborder btn btn-primary btn-lg btn-block">Submit Payment</button>
     <% end %>
   </div>
