@@ -11,11 +11,14 @@
   // background-color: rgba(255,255,255,0.5);
   color: white;
   border-radius: 5px;
-  overflow-y: scroll;
   padding: 1em;
   font-size: 12px;
   border: 2px solid black;
   display: none;
+  overflow-y: scroll;
+}
+.chat-history{
+
 }
 .chat-input{
   position: fixed;
@@ -43,10 +46,16 @@
 }
 .chat-header{
   // background-color: rgba(0,0,0,0.8);
+  background-color: black;
+  width: 300px;
   color: white;
   margin: -12px;
   padding: 10px;
-  // position: fixed;
+  position: fixed;
+  right: 22px;
+  bottom: 350px;
+  display: none;
+  border-radius: 5px;
 }
 .hideChat{
   font-size: 14px;
