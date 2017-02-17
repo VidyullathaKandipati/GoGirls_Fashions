@@ -2,10 +2,11 @@
 <%=  render :partial => 'layouts/navbarInner' %>
 <br>
 <br>
-    <div class="container">
-    <% if flash[:error].present? %>
+<div class="container">
+  <% if flash[:error].present? %>
     <p class="bg-danger"><%= flash[:error] %></p>
-    <% end %>
+  <% end %>
+
 
     <div class="row">
     <div class="col-md-4"></div>
@@ -32,4 +33,5 @@
 
     <div class="col-md-4"></div>
     </div>
+
 </div>
