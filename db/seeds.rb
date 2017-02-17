@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Need to explicitlity delete Orders
+
+
 User.destroy_all
 u1 = User.create(name: 'Jess', email: 'jess@ga.com', password: 'chicken', admin: true, contact: '+61897798404', address: 'Sydney');
 u2 = User.create(name: 'Latha', email: 'latha@ga.com', password: 'chicken', admin: true, contact: '+61897768404', address: 'Sydney');
@@ -57,7 +61,6 @@ p62 = Product.create(name: 'Buster Shirt', cost: 170, size: 'l', color: 'white',
 p63 = Product.create(name: 'LS Classic Oxford Shirt', cost: 100, size: 'l', color: 'blue', gender: 'men', brand:'Ben Sherman', info: 'With its slim cut and blue hue, the LS Classic Shirt from Ben Sherman will be on constant rotation. Wear yours with slim-fit pants and loafers.');
 p64 = Product.create(name: 'Gavin Shirt', cost: 60, size: 'l', color: 'black', gender: 'men', brand:'Jack & Jones', info: "Button-down shirts are never out of place in a man's wardrobe, so build up your collection with the Jack & Jones Gavin LS Shirt.");
 p65 = Product.create(name: 'Moonah LS Cotton Poplin Shirt', cost: 50, size: 'l', color: 'white', gender: 'men', brand:'Staple Superior', info: 'The crisp Moonah Poplin Shirt from Staple Superior is cut from soft cotton shirting and has a striped placket lining for a hint of colour.');
-
 
 
 

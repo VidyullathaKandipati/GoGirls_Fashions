@@ -1,27 +1,25 @@
 <div class="container">
-<%=  render :partial => 'layouts/navbarInner' %>
-<h1>Listing Orders</h1>
+  <%=  render :partial => 'layouts/navbarInner' %>
+  <h1>Listing Orders</h1>
 
-<table class=table>
-  <thead>
-    <tr>
-      <td>ORDER ID</td>
-      <td>STATUS</td>
-      <td>USER ID</td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+  <table class=table>
+    <thead>
       <tr>
-        <td><%=link_to "#{order.id}", order_path(order.id) %></td>
-        <td><%= order.status %> </td>
-        <td><%= order.user_id %> </td>
-        <% end %>
+        <td>ORDER ID</td>
+        <td>STATUS</td>
+        <td>USER ID</td>
       </tr>
+    </thead>
 
-
-  </tbody>
-</table>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%=link_to "#{order.id}", order_path(order.id) %></td>
+          <td><%= order.status %> </td>
+          <td><%= order.user_id %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 </div>
