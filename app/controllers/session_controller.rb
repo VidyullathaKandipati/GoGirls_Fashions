@@ -18,7 +18,14 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    # Deleting the unpaid order upon signout / logout
+    order = Order.find session[:order_id]
+    order.destroy if order.status == false
+
+    # Deleting session related variables
     session[:user_id] = nil
+    session[:order_id] = nil
+
     flash[:logout] = "Logged out successfully"
     redirect_to root_path
   end

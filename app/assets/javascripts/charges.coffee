@@ -1,6 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+
+# Thanks to : https://rails.devcamp.com/ruby-gem-walkthroughs/payment/how-to-use-a-custom-form-for-stripe
+#Sends information from the form to the Stripe API to complete transaction
+
 jQuery ($) ->
   $('#payment-form').submit (event) ->
     $form = $(this)
