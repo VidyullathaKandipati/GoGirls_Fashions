@@ -15,7 +15,8 @@
       <td> </td>
     </tr>
 
-    <% @order.line_items.each do |item| %>
+
+    <% @customer_order.line_items.each do |item| %>
       <tr>
         <td><%= cl_image_tag(item.product.images[0], :style => "height:150px") %></td>
         <td><%= item.product.name %></td>

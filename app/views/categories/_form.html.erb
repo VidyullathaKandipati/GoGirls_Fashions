@@ -1,21 +1,12 @@
 <%= form_for(@category, :html=>{:multipart=>true}) do |f| %>
-
-<div class="row">
-
-<div class="col-md-3"></div>
-
-<div class="col-md-6">
-
-<div class="form-group">
-  *<%= f.label :name %>
-  <%= f.text_field :name, :autofocus=>true, :required => true, :class=>"form-control textfield-border" %>
-  
-</div>
-
-
+  <div class="row">
+    <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="form-group">
+          *<%= f.label :name %>
+          <%= f.text_field :name, :autofocus=>true, :required => true, :class=>"form-control textfield-border" %>
+        </div>
 <% end %>
-</div>
-
-<div class="col-md-3"></div>
-
+      </div>
+      <div class="col-md-3"></div>
 </div>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GoGirlsFashions</title>
+  <title>Get Fashions</title>
 
   <!-- <%= cloudinary_js_config %> -->
-
+  <%= favicon_link_tag %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,8 +28,8 @@
 </div>
 
 <% unless current_page?(root_path) %>
+<h1 class="chat-header">Need help???<span class="hideChat">hide</span></h1>
 <div class="chat-window">
-  <h1 class="chat-header">Need help???<span class="hideChat">hide</span></h1>
   <div class="chat-history"></div>
 </div>
 <div class="chat-input">
