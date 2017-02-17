@@ -14,6 +14,8 @@ class LineItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
 
+#total cost per line item
+#used in order.rb
   def total_cost
     product.cost * quantity
   end

@@ -24,6 +24,8 @@ class Order < ActiveRecord::Base
     current_item
   end
 
+#create array line items
+# sums the total_cost as calculated in line_items.rb
   def total_cost
     line_items.to_a.sum {|item| item.total_cost}
   end
