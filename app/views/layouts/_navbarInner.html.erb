@@ -93,10 +93,11 @@
           <li><%= link_to "Orders", orders_path %></li>
         </ul>
       </li>
+      <% end %>
       <li>
         <%= link_to order_path(:id => @order.id) do%><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><% end %>
       </li>
-    <% end %>
+
     <% end %>
 
   </ul>
