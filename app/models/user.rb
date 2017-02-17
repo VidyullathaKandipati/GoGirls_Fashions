@@ -15,9 +15,9 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :orders
-  has_many :favourites
-  has_many :reviews
+  has_many :orders, dependent: :destroy
+  has_many :favourites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_secure_password
 
   validates :email, :presence => true, :uniqueness => true

@@ -17,8 +17,6 @@ before_action :set_order, only: [:create]
   def create
     product = Product.find(params[:product_id])
     @line_item = @order.add_product(product.id)
-    # @line_item = @order.line_items.build(product: product)
-    # @line_item.quantity += 1
 
     if @line_item.save
       flash[:msg] = "Item added to the cart."
