@@ -1,12 +1,9 @@
 class LineItemsController<ApplicationController
-
+# CurrentOrder from controllers/concerns/current_order.rb
   include CurrentOrder
 
-# PROBABLY DONT NEED ANYTHING IN HERE!
 
 before_action :set_order, only: [:create]
-
-#before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   def index
   end

@@ -1,7 +1,5 @@
 
-
 <%=  render :partial => 'layouts/navbarInner' %>
-
 
 <div class="container">
   <h2>Your Cart</h2>
@@ -16,41 +14,33 @@
       <td>Total Price</td>
       <td> </td>
     </tr>
+
     <% @order.line_items.each do |item| %>
-
-
-
       <tr>
-        <td>
-          <%= cl_image_tag(item.product.images[0], :style => "height:150px") %> </td>
+        <td><%= cl_image_tag(item.product.images[0], :style => "height:150px") %></td>
         <td><%= item.product.name %></td>
         <td><%= item.product.size %></td>
         <td><%= number_to_currency(item.product.cost) %></td>
         <td><%= item.quantity %></td>
         <td><%= number_to_currency(item.quantity * item.product.cost) %></td>
         <td><%= link_to 'x', lineitem_destroy_path(item.id), :method => 'delete' %></td>
-
       </tr>
-      <% end %>
+    <% end %>
 
-        <tr>
-          <td colspan="5" ></td>
-          <td colspan="2" class="totalCost"><%= number_to_currency(@order.total_cost) %></td>
-
-        </tr>
-
+    <tr>
+      <td colspan="5" ></td>
+      <td colspan="2" class="totalCost"><%= number_to_currency(@order.total_cost) %></td>
+    </tr>
 
   </table>
 
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btnborder btn btn-primary"%>
-
-
-    <%= link_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'}, :class=>"btnborder btn btn-primary " %>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btnborder btn btn-primary"%>
+      <%= link_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'}, :class=>"btnborder btn btn-primary " %>
     </div>
-  <div class="col-md-4"></div>
-</div>
+    <div class="col-md-4"></div>
+  </div>
 
 </div>

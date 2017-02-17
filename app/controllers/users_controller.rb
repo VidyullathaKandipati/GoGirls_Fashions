@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, :only => [:edit, :update, :show]
 
   def wishlist
-
   end
 
   def index
