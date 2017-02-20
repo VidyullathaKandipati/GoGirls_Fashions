@@ -35,7 +35,7 @@
   color: white;
   border-radius: 20px;
   padding: 1em;
-  // display: none;
+  cursor: pointer;
 }
 .question{
   margin: 20px auto;
@@ -61,4 +61,5 @@
   font-size: 14px;
   position: fixed;
   right: 30px;
+  cursor: pointer;
 }

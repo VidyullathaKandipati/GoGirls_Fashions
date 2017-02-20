@@ -26,7 +26,7 @@
         });
 
        //Appending the question and clear the input field
-      //  $('.chat-header').hide();
+       //  $('.chat-header').hide();
        var $question = $('<div/>');
        $question.text(inputText);
        $question.addClass('question');
