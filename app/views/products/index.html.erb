@@ -1,15 +1,16 @@
 
-<%=  render :partial => 'layouts/navbarHomepage' %>
+<%=  render :partial => 'layouts/navbarInner' %>
 
-<h1>All products</h1>
-<ul>
-<% @products.each do |p| %>
-  <div class="col-md-12">
-    <%= link_to p.name, product_path(p.id) %>
-    | <%= link_to "Edit", edit_product_path(p.id)%>
-    | <%= link_to "Delete", product_path(p.id),
-                                  :method=>"delete", :data=>{:confirm=>"Are you sure?"} %>
+<div class="row">
+
+  <div class="col-md-1"></div>
+
+    <div class="col-md-5">
+      <h1>All Products</h1>
+      <%=  render :partial => 'products/list' %>
+    </div>
+  <div class="col-md-5">
 
   </div>
-<% end %>
-</ul>
+  <div class="col-md-1"></div>
+</div>

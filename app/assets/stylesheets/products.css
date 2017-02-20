@@ -18,3 +18,19 @@ body.products.show .navbar a{
 body.products.show .navbar .blackfont{
   color: #fff;
 }*/
+
+.adminProductsShow{
+  font-weight: bold;
+  text-align: right;
+}
+.adminbtn{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.adminbtn:hover{
+  background-color: black;
+  color: white;
+}

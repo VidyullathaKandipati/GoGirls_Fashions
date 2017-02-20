@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      redirect_to new_category_path
+      redirect_to categories_path
     else
       render :new
     end
@@ -28,13 +28,13 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     @category.update category_params
-    redirect_to new_category_path
+    redirect_to categories_path
   end
 
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to new_category_path
+    redirect_to categories_path
 
   end
 

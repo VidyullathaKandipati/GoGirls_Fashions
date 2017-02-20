@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+
+
   end
 
   def search
@@ -10,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-
+    session[:prev_url]= request.referer
   end
 
   def new
@@ -28,13 +30,14 @@ class ProductsController < ApplicationController
     end
     if @product.save
       flash[:create] = "Product created successfully"
-      redirect_to new_product_path
+      redirect_to products_path
     else
       render :new
     end
   end
 
   def edit
+    session[:prev_url]= request.referer
   end
 
   def update
@@ -49,7 +52,7 @@ class ProductsController < ApplicationController
 
     if @product.save
       flash[:create] = "Product updated successfully"
-      redirect_to new_product_path
+      redirect_to session.delete(:prev_url)
     else
       render :edit
     end
@@ -57,11 +60,17 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    respond_to do |format|
-      format.html { redirect_to new_product_path, notice: 'Product is successfully destroyed.' }
-      format.json { head :no_content }
+    if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+      redirect_to :back
+    else
+      redirect_to session.delete(:prev_url)
     end
+    # respond_to do |format|
+    #   format.html { redirect_to session.delete(:prev_url) , notice: 'Product is successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.

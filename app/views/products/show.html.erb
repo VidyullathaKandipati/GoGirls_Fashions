@@ -5,6 +5,12 @@
 <div class="container">
   <div class="row">
     <div class='col-md-6'>
+      <% if @current_user.admin %>
+        <div class = "adminProductsShow">
+          <%= link_to "Edit", edit_product_path(@product.id), :class=>"adminbtn btnblack btnborder btn btn-primary " %>
+          <%= link_to "Delete", product_path(@product.id), :method=>"delete",:class=>"adminbtn btnblack btnborder btn btn-primary " , :data=>{:confirm=>"Are you sure?"} %>
+        </div>
+      <% end %>
       <h3><%= @product.name %></h3>
       <br>
       <p>Price : <span id="price"><%= number_to_currency(@product.cost)%></span></p>

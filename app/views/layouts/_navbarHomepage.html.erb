@@ -83,13 +83,18 @@
         <li class=" dropdown">
           <a href="#" class=" blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><%= link_to "Product", new_product_path, :id=>"drop" %></li>
+          <li><%= link_to "All Products", products_path %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Category", new_category_path, :id=>"drop" %></li>
+          <li><%= link_to "New Product", new_product_path %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Users", users_path, :id=>"drop" %></li>
+          <li><%= link_to "All Categories", categories_path %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "Orders", orders_path, :id=>"drop" %></li>
+
+          <li><%= link_to "New Category", new_category_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Orders", orders_path %></li>
         </ul>
       </li>
       <% end %>
